@@ -1,7 +1,7 @@
 var roomData;
 var itemData;
 var inventory;
-
+var escapeTimer;
 
 
 $(document).mousemove(function(e) {
@@ -102,7 +102,7 @@ $(document).ready(function() {
         start = Date.parse(start);
     }
 
-    setInterval(function() {
+    escapeTimer = setInterval(function() {
 
         var now = new Date - start;
         var hours = Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -721,6 +721,7 @@ function showRoom(targetRoomData) {
         $(".end-panel").css("visibility","visible");
         $(".end-panel img").css("transform","scale(1,1)");  
 
+        clearInterval(escapeTimer);
         var i = 0;
         var txt = '..you got out of the office. Now you need to get out of the building!    To be continued...'; /* The text */
         var speed = 75; /* The speed/duration of the effect in milliseconds */

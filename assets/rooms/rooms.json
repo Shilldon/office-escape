@@ -432,7 +432,8 @@
                 [65,28]
             ],            
             "go_to":"battery_bucket"
-        }
+        },
+        "magnify":true
     },      
     "aisle_2_south": {
         "image":"aisle_2_south",
@@ -933,6 +934,7 @@
                 "active":false,
                 "active_condition":false,
                 "selected_item":"screwdriver",
+                "remove_item":"screwdriver",
                 "description":" ",
                 "rooms_affected": {
                     "stationery_cupboard": {
@@ -1189,7 +1191,8 @@
             "code":["61048","Dave Bowman","2001","594A21"],
             "locked":true,
             "target":"accessed-printer",
-            "error": ["Model not recognised","User not recognised","User ID not recognised","Wrong password"]
+            "error": ["Model not recognised","User not recognised","User ID not recognised","Wrong password"],
+            "remove_item":["calendar","notebook"]
         },
         "directions":{
             "south":"printer"
@@ -1267,7 +1270,7 @@
             "locked":true,
             "target":"accessed-pc",
             "error": ["","Wrong password"],
-            "remove_item":["stamp","seating_plan"]
+            "remove_item":["stamp"]
         }
     },
     "pc-intranet": {
@@ -1280,10 +1283,6 @@
             "Close PC": {
                 "active":true,
                 "go_to":"aisle_4_west"
-            },
-            "take keycard": {
-                "active":true,
-                "add_item":"key-card"
             }
         },
         "code_panel": {
@@ -1493,7 +1492,8 @@
             "Use ruler to get keycard": {
                 "active": false,
                 "selected_item":"ruler",
-                "add_item": "key-card",
+                "remove_item":["ruler","torch"],
+                "add_item": ["key-card","battery"],
                 "rooms_affected":{
                     "pedestal_light": {
                         "image":"side_desk_light",

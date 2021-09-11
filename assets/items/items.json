@@ -353,7 +353,7 @@
                         "options": {
                             "Use pencil on notebook":{
                                 "active":false,
-                                "selected_item": ""
+                                "selected_item": ""                   
                             },
                             "Open notebook": {
                                 "items_affected": {
@@ -361,12 +361,11 @@
                                         "description": "You can make out some words through the scribbles which read \"DAVE\" and \"594A21\"" 
                                     }
                                 }
-                                
                             }                          
                         }
                     }
                 },
-                "remove_item": "battery"
+                "remove_item":"pencil"
             }                                  
         }
     },
