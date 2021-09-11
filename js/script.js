@@ -893,12 +893,12 @@ function implementOption(effects, caller) {
                     itemData[item].image = value.image;
                 }        
                 var slot = $(".item[data-item='" + item +"']");
-                slot.css("background-image","url(https://shilldon-escape.s3.eu-west-2.amazonaws.com//"+itemData[item].image+".jpg");                      
+                slot.css("background-image","url(https://shilldon-escape.s3.eu-west-2.amazonaws.com/items/"+itemData[item].image+".jpg");                      
             }
             if(value.hasOwnProperty("change_image")) {
                 itemData[item].image = value.change_image;  
                 var slot = $(".item[data-item='" + item +"']");
-                slot.css("background-image","url(https://shilldon-escape.s3.eu-west-2.amazonaws.com/"+itemData[item].image+".jpg");                       
+                slot.css("background-image","url(https://shilldon-escape.s3.eu-west-2.amazonaws.com/items/"+itemData[item].image+".jpg");                       
             }
             if(value.hasOwnProperty("alt_image")) {
                 itemData[item].alt_image = value.alt_image;    
