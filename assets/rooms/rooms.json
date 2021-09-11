@@ -707,26 +707,7 @@
                 "active":true,
                 "go_to": "briefcase"
             }
-        },
-        "click_option": {
-            "active":true,
-            "area": [
-                [31,20],
-                [39,20],
-                [31,28],
-                [39,28]            
-            ],
-            "add_item":"scissors",
-            "rooms_affected" :{
-                "aisle_5_east": {
-                    "image":"aisle_5_east_no_scissors",
-                    "click_option": {
-                        "active":false
-                    }
-                }
-            }
-        },
-        "magnify":true
+        }
     },   
     "aisle_5_south": {
         "image":"aisle_5_south",
@@ -809,14 +790,14 @@
                 },
                 "add_item":"post-it"
             },
-            "Take torch": {
+            "Take scissors": {
                 "active":false,
-                "add_item":"torch",
+                "add_item":"scissors",
                 "remove_item":"business-card",
                 "rooms_affected": {
                     "target_board": {
                         "options": {
-                            "Take torch": {
+                            "Take scissors": {
                                 "active":false
                             }
                         },

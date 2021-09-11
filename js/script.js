@@ -264,7 +264,7 @@ $(".target-cover").on("click", function() {
         currentRoom = $("body").attr("data");
         console.log("current room "+currentRoom)
         console.log("data "+JSON.stringify(roomData[currentRoom]))
-        roomData[currentRoom].options["Take torch"].active = true;
+        roomData[currentRoom].options["Take scissors"].active = true;
         moveToTarget(currentRoom);
     }
 
@@ -934,6 +934,7 @@ function implementOption(effects, caller) {
 
     /*if image to display is set then don't move room just display the image and update the options*/
     if(effects.image_to_display!=undefined) {
+        console.log("changing room image")
         if(effects.image_format!=undefined){
                 $("#room-image").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/rooms/"+effects.image_to_display+"."+effects.image_format);     
       
