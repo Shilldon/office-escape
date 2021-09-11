@@ -241,31 +241,35 @@ $(".printer-logon-button").on("click", function() {
 
 $(".target-cover").on("click", function() {
     console.log("clicked");
-    var coversClicked = $(".target-board-back").attr("data-covers-clicked");
-    var clickedCover = $(this).attr("data-click-order");
-    console.log("coversClicked "+coversClicked+1)
-    console.log("clickedCover "+clickedCover)
-    if(parseInt(clickedCover) == parseInt(coversClicked)+1) {
-        $(this).css({"transform":"scale(0,0)"});     
-        coversClicked=clickedCover;
-        $(".target-board-back").attr("data-covers-clicked",coversClicked);  
-        
-    }
-    else {
-        $(this).css({"transform":"translate(15%,-10%)"});
-        //$(this).css({"transform-origin":"top left","transform":"rotate(-15deg)"})
-        var cover = $(this);
-        setTimeout(function() {
-             $(".target-cover").css({"transform":"translate(0,0) scale(1,1)"});        
-        },750);
-        $(".target-board-back").attr("data-covers-clicked",0);
-    }
-    if(coversClicked == 6) {        
-        currentRoom = $("body").attr("data");
-        console.log("current room "+currentRoom)
-        console.log("data "+JSON.stringify(roomData[currentRoom]))
-        roomData[currentRoom].options["Take scissors"].active = true;
-        moveToTarget(currentRoom);
+    if($(this).attr("no-click")!=true) {
+        var coversClicked = $(".target-board-back").attr("data-covers-clicked");
+        var clickedCover = $(this).attr("data-click-order");
+        console.log("coversClicked "+coversClicked+1)
+        console.log("clickedCover "+clickedCover)
+        if(parseInt(clickedCover) == parseInt(coversClicked)+1) {
+            $(this).css({"transform":"scale(0,0)"});     
+            coversClicked=clickedCover;
+            $(".target-board-back").attr("data-covers-clicked",coversClicked);  
+            
+        }
+        else {
+            $(this).css({"transform":"translate(15%,-10%)"});
+            //$(this).css({"transform-origin":"top left","transform":"rotate(-15deg)"})
+            var cover = $(this);
+            $(".target-cover").attr("no-click",true);
+            setTimeout(function() {
+                 $(".target-cover").css({"transform":"translate(0,0) scale(1,1)"});    
+                 $(".target-cover").attr("no-click",false);    
+            },750);
+            $(".target-board-back").attr("data-covers-clicked",0);
+        }
+        if(coversClicked == 6) {        
+            currentRoom = $("body").attr("data");
+            console.log("current room "+currentRoom)
+            console.log("data "+JSON.stringify(roomData[currentRoom]))
+            roomData[currentRoom].options["Take scissors"].active = true;
+            moveToTarget(currentRoom);
+        }
     }
 
 })
