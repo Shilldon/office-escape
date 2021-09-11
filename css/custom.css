@@ -1,0 +1,542 @@
+body {
+  color: #1a3a7c;
+  font: "source sans pro";
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: Bahnschrift;
+  src: url("../assets/fonts/BAHNSCHRIFT.TTF");
+}
+
+.pc-search {
+  font-size: 0.75rem;
+  padding: 2px;
+  border: 1px solid grey;
+}
+
+.pc-search:focus {
+  outline: none;
+}
+
+.pc-keycard {
+  position: absolute;
+  left: 45%;
+  top: 47%;
+  width: 35%;
+}
+
+.pc-keycard input {
+  padding: 2px;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+.pc-keycard input:focus {
+  outline: none;
+}
+
+.clock {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  width: 15%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 3px #991f6b solid;
+  border-radius: 5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  color: white;
+  background-color: #1a3a7c;
+  z-index: 10;
+}
+
+.clock .timer {
+  width: 12.5%;
+}
+
+.end-panel {
+  position: absolute;
+  z-index: 15;
+  color: white;
+  visibility: hidden;
+  font-size: 1.5rem;
+}
+
+.end-panel img {
+  position: relative;
+  -webkit-transition-duration: 0.75s;
+          transition-duration: 0.75s;
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+}
+
+.end-text {
+  position: absolute;
+  top: 25%;
+}
+
+.move-button {
+  background-color: #1a3a7c;
+  color: white;
+  z-index: 3;
+}
+
+.move-button-corner {
+  background-color: #1a3a7c;
+  color: white;
+  z-index: 3;
+}
+
+.active:hover {
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+  background-color: #991f6b;
+  color: white;
+}
+
+.btn {
+  color: white;
+  font-size: 1.25rem;
+  background-color: #1a3a7c;
+}
+
+.btn:hover {
+  background-color: #991f6b;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.pc-search-panel {
+  visibility: visible;
+  position: absolute;
+  left: 73.75%;
+  width: 21.25%;
+  top: 24.65%;
+}
+
+.pc-keycard-link {
+  position: absolute;
+  left: 22.2%;
+  top: 86.05%;
+  width: 29.5%;
+}
+
+.pc-keycard-link img {
+  width: 100%;
+}
+
+.pc-logon-panel {
+  visibility: hidden;
+  position: absolute;
+  width: 32%;
+  top: 55%;
+}
+
+.pc-logon-button {
+  color: white;
+  font-family: "Segoe MDL2 Assets";
+  background-color: rgba(77, 77, 77, 0.75);
+}
+
+.pc-logon-button i {
+  color: white;
+}
+
+.code-panel {
+  z-index: 3;
+}
+
+.phone-passcode-panel {
+  position: absolute;
+  width: 32%;
+  height: 30%;
+  top: 45%;
+  left: 34%;
+}
+
+.phone-passcode-panel input {
+  padding-top: 7%;
+  height: 75%;
+  background-color: transparent;
+  border: none;
+  pointer-events: none;
+  color: white;
+  letter-spacing: 1vw;
+  font-size: 100% !important;
+  text-align: center;
+}
+
+.printer-logon-panel {
+  visibility: hidden;
+  position: absolute;
+  width: 32%;
+  top: 46%;
+  height: 100%;
+}
+
+.printer-logon-panel .input-group {
+  height: 4.35%;
+}
+
+.printer-logon-panel input {
+  padding-left: 0;
+  caret-color: white;
+  color: #41626c;
+  font-family: "Bahnschrift";
+  font-weight: 900;
+  font-size: 1rem;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.printer-logon-panel input:disabled {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent;
+  color: black;
+}
+
+.printer-logon-panel input:focus {
+  background-color: transparent;
+}
+
+.printer-logon-button {
+  width: 29%;
+  height: 6%;
+  position: absolute;
+  left: 99%;
+  font-family: "Bahnschrift";
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.puzzle-block {
+  position: absolute;
+  width: 6.64%;
+  height: 9.6875%;
+  top: 40.75%;
+}
+
+.keypress {
+  position: absolute;
+  height: 3vw;
+  width: 3vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #cccccc;
+}
+
+.item {
+  border: #991f6b 4px solid;
+  margin: 2vh;
+  width: 10vh;
+  height: 10vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.display-panel {
+  padding: 0 !important;
+}
+
+.display-panel img {
+  max-width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.briefcase {
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.briefcase-lock {
+  position: absolute;
+}
+
+.briefcase-arrow {
+  opacity: 0.5;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+
+.briefcase-arrow:hover {
+  color: #991f6b;
+  opacity: 1;
+}
+
+/*
+.excel-passcode-panel {
+    left: 23.525%;
+    top: 29.67%;
+    height: 2.84%;
+    width: 8.727%;
+    border: 1px solid red;
+    position: absolute;
+    z-index:10;
+    input {
+        max-width: 100%;
+        max-height:100%;
+        padding:0;
+        text-align:right;
+        border:none;
+        position: absolute;
+        font-family: Arial;
+        font-size:90%;
+    }
+}*/
+.excel-passcode-panel {
+  left: 3.425%;
+  top: 15.75%;
+  height: 28.84%;
+  width: 62.027%;
+  position: absolute;
+  z-index: 10;
+  /*
+    input {
+        max-width: 100%;
+        max-height:100%;
+        padding:0;
+        text-align:right;
+        border:none;
+        position: absolute;
+        font-family: Arial;
+        border: red solid 1px;
+    }*/
+}
+
+.excel-table {
+  color: black;
+  border-collapse: collapse;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  font-weight: 600;
+  font-family: Arial;
+}
+
+.excel-table tr {
+  padding: 0;
+  font-size: 75%;
+}
+
+.excel-table td {
+  text-align: right;
+}
+
+.excel-table td input {
+  font-weight: 600;
+  font-family: Arial;
+  line-height: 100%;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-size: inherit;
+  width: 100%;
+  max-height: 100%;
+  background-color: transparent;
+}
+
+.excel-table td input:focus {
+  outline: none;
+}
+
+.excel-table td input::-webkit-outer-spin-button,
+.excel-table td input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.excel-table td:focus {
+  outline: none;
+}
+
+.inventory-menu {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.item-display img {
+  max-width: 100%;
+}
+
+.item-container {
+  position: relative;
+}
+
+.examine-item {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.75rem;
+  z-index: 1;
+}
+
+.item-selected {
+  border-color: #1a3a7c !important;
+}
+
+.alert {
+  position: absolute;
+  top: 0;
+  z-index: 9999 !important;
+  width: 50%;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+}
+
+.magnified-image {
+  display: none;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: solid black 2px;
+  z-index: 2;
+}
+
+.img-magnifier-container {
+  pointer-events: none;
+  z-index: 5;
+}
+
+#message-modal {
+  z-index: 9999 !important;
+  font-size: 2em;
+}
+
+.magnified-item-image {
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: solid black 2px;
+  background-color: white;
+}
+
+#magnified-item-modal {
+  width: 100vw !important;
+}
+
+#magnified-item-modal .modal-dialog {
+  max-width: 90vw !important;
+}
+
+#magnified-item-modal .modal-content {
+  width: 85vw;
+}
+
+.img-magnifier-container-item {
+  pointer-events: none;
+}
+
+.target-board-back {
+  position: absolute;
+  z-index: -2;
+}
+
+.cover-1 {
+  position: absolute;
+  width: 13.75%;
+  height: 18.85%;
+  top: 12.71%;
+  z-index: 0;
+  left: 41.09%;
+}
+
+.cover-2 {
+  position: absolute;
+  width: 14.22%;
+  height: 19.58333%;
+  top: 35.1%;
+  z-index: 0;
+  left: 31.25%;
+}
+
+.cover-3 {
+  position: absolute;
+  width: 17.81%;
+  height: 17.19%;
+  top: 35.625%;
+  z-index: 0;
+  left: 49.375%;
+}
+
+.cover-4 {
+  position: absolute;
+  width: 15.39%;
+  height: 16.77%;
+  top: 57.083%;
+  z-index: 0;
+  left: 24.21875%;
+}
+
+.cover-5 {
+  position: absolute;
+  width: 13.75%;
+  height: 16.25%;
+  top: 56.5625%;
+  z-index: 0;
+  left: 40.39%;
+}
+
+.cover-6 {
+  position: absolute;
+  width: 13.75%;
+  height: 15.97375%;
+  top: 56.0416%;
+  z-index: 0;
+  left: 55%;
+}
+
+.target-cover {
+  pointer-events: all;
+}
+
+@media (min-width: 1920px) {
+  .phone-passcode-panel input {
+    font-size: 2.75rem;
+  }
+  .printer-logon-button {
+    height: 5%;
+    font-size: 1.45rem;
+  }
+  .printer-logon-panel input {
+    font-size: 1.45rem;
+  }
+  .btn {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .pc-search {
+    font-size: 1rem;
+    padding: 5px;
+  }
+}
+/*# sourceMappingURL=custom.css.map */
