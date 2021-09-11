@@ -1,0 +1,715 @@
+{
+    "clock":{
+        "name": "Clock",
+        "image": "clock-on",
+        "description":"A clock",
+        "alt_image": "clock-back-battery",
+        "options":{
+            "Turn clock over": {
+                "active":true,
+                "items_affected": {
+                    "clock": {
+                        "image":"toggle-image",
+                        "options": {
+                            "Take battery out of clock": {
+                                "toggle":true
+                            }
+                        }
+                    }
+                }
+            },
+            "Take battery out of clock": {
+                "active": false,
+                "active_condition": true,
+                "items_affected": {
+                    "clock" : {
+                        "image": "clock-back-no-battery",
+                        "alt_image": "clock-off",
+                        "description": "A clock that is not working",
+                        "options": {
+                            "Take battery out of clock":{
+                                "active": false,
+                                "active_condition": false
+                            }
+                        }
+                    }
+                },
+                "add_item":"battery"
+            },
+            "Put battery in clock": {
+                "active":false,
+                "selected_item":"battery",
+                "items_affected": {
+                    "clock": {
+                        "image":"clock-back-battery",
+                        "alt_image": "clock-on",
+                        "description": "A clock",
+                        "options": {
+                            "Take battery out of clock":{
+                                "active":true,
+                                "active_condition":true
+                            }                          
+                        }
+                    }
+                },
+                "remove_item": "battery"
+            }            
+        }
+    },
+    "torch": {
+        "name": "Torch",
+        "image": "torch",
+        "description": "A torch",
+        "options": {
+            "Switch torch on": {
+                "active":false,
+                "rooms_affected": {
+                    "pedestal": {
+                        "options":{
+                            "Use torch to look beside pedestal": {
+                                "active_condition":true
+                            }
+                        }
+                    }
+                },
+                "items_affected": {
+                    "torch": {
+                        "image": "torch-on",  
+                        "description": "Wow! That's bright!",                      
+                        "options":{
+                            "Switch torch on": {
+                                "active": false
+                            },
+                            "Switch torch off": {
+                                "active": true
+                            }                            
+                        }
+                    }
+                }               
+            },
+            "Switch torch off": {
+                "active":false,
+                "rooms_affected": {
+                    "pedestal": {
+                        "options":{
+                            "Use torch to look beside pedestal": {
+                                "active_condition":false
+                            }
+                        }
+                    }
+                },
+                "items_affected": {
+                    "torch": {
+                        "image": "torch",    
+                        "description": "A torch",                         
+                        "options":{
+                            "Switch torch on": {
+                                "active": true
+                            },
+                            "Switch torch off": {
+                                "active": false
+                            }                            
+                        }
+                    }
+                }               
+            },      
+            "Open torch": {
+                "active":true,
+                "items_affected": {
+                    "torch": {
+                        "description": "There is no battery inside",
+                        "image":"torch-open",
+                        "options": {
+                            "Open torch": {
+                                "active": false
+                            }
+                        }
+                    }
+                }
+            },      
+            "Take battery out of torch": {
+                "active":false,
+                "rooms_affected": {
+                    "pedestal": {
+                        "options" : {
+                            "Use torch to look beside pedestal": {
+                                "active_condition": false
+                            }                          
+                        }
+                    }
+                },
+                "items_affected": {
+                    "torch": {
+                        "image": "torch-open",    
+                        "description": "There is no battery inside",                    
+                        "options":{
+                            "Switch torch on": {
+                                "active": false
+                            },
+                            "Switch torch off": {
+                                "active": false
+                            },
+                            "Take battery out of torch": {
+                                "active": false
+                            }      
+                        }
+                    }
+                },
+                "add_item": "battery"               
+            },
+            "Put battery in torch": {
+                "active": false,
+                "selected_item":"battery",
+                "items_affected": {
+                    "torch": {
+                        "description": "A torch",
+                        "options": {
+                            "Switch torch on":{
+                                "active":true
+                            },
+                            "Take battery out of torch": {
+                                "active":true
+                            },
+                            "Open torch": {
+                                "active": false
+                            }                            
+                        },
+                        "image":"torch"
+                    }
+                },
+                "remove_item": "battery"  
+            }                    
+        }
+    },
+    "battery": {
+        "name":"Battery",
+        "image":"battery",
+        "description": "A battery"
+    },
+    "stepstool": {
+        "name": "Stepstool",
+        "image":"stepstool",
+        "description": "Standard office issue to help short people reach things."
+    },
+    "ruler": {
+        "name":"Ruler",
+        "image": "ruler",
+        "description":"A ruler, one of those really cool shatterproof ones that every schoolchild in the 80s owned and bent into odd shapes!"
+    },
+    "broken_pencil": {
+        "name":"Broken pencil",
+        "image": "pencil_broken",
+        "description":"A broken pencil with a Knight's helmet on the end and the Code of Chivalry written on it. 'Defend the weak, be courteous to all women, be loyal to the king, and serve God at all times.'",
+        "options":{
+            "Sharpen pencil": {
+                "active":false,
+                "active_condition":false,
+                "selected_item":"pencil_sharpener",
+                "remove_item":"pencil_sharpener",
+                "replace_item":["broken_pencil","pencil"]
+            }            
+        }
+    },  
+    "pencil": {
+        "name":"Pencil",
+        "image": "pencil",
+        "description":"A pencil with a Knight's helmet on the end and the Code of Chivalry written on it. 'Defend the weak, be courteous to all women, be loyal to the king, and serve God at all times.'"
+    },         
+    "key-card":{
+        "name": "Key Card",
+        "image": "key-card-front",
+        "alt_image": "key-card-back",
+        "description":"Sarah's key card. You could probably use this to open the office door.",
+        "options": {
+            "Turn card over": {
+                "active": true,
+                "items_affected": {
+                    "key-card": {
+                        "image": "toggle-image",
+                        "description": "Sarah's key card. You could probably use this to open the office door. It looks like there was a number on the back of the card but it has rubbed off."
+                    }
+                }
+            }
+        }
+    },
+    "activated-key-card":{
+        "name": "Key Card",
+        "image": "key-card-front",
+        "alt_image": "key-card-back",
+        "description":"Sarah's key card. Now that it is has been activated it should open the office door.",
+        "options": {
+            "Turn card over": {
+                "active": true,
+                "items_affected": {
+                    "key-card": {
+                        "image": "toggle-image",
+                        "description": "Sarah's key card. Now that it is has been activated it should open the office door."
+                    }
+                }
+            }
+        }
+    },    
+    "pencil_sharpener": {
+        "name": "Model Knight",
+        "image": "pencil_sharpener",
+        "description": "Small metal model of a knight. It appears to be missing its sword. That's not a clue, the actual model is missing its sword because the thumb broke off years ago!",
+        "options": {
+            "Turn model over": {
+                "active":true,
+                "items_affected": {
+                    "pencil_sharpener": {
+                        "image":"pencil_sharpener_bottom",
+                        "description":"It's a pencil sharpener!",
+                        "name":"Pencil sharpener",
+                        "options": {
+                            "Turn model over" : {
+                                "active":false
+                            },
+                            "Sharpen pencil": {
+                                "active_condition":true
+                            }
+                        }
+                    },
+                    "broken_pencil": {
+                        "options": {
+                            "Sharpen pencil": {
+                                "active_condition":true
+                            }                            
+                        }
+                    }
+                }
+            },
+            "Sharpen pencil": {
+                "active":false,
+                "active_condition":false,
+                "remove_item":"pencil_sharpener",                
+                "selected_item":"broken_pencil",
+                "replace_item":["broken_pencil","pencil"]
+            }
+        }
+    },
+    "desk-key": {
+        "name": "Key",
+        "image": "desk-key",
+        "description": "A key to open a desk or maybe a cupboard or perhaps the long lost treasure of the Sierra Madre?"
+    },
+    "notebook": {
+        "name":"Notebook",
+        "image":"notebook",
+        "alt_image":"notebook-open",
+        "description":"A highly sought after IM notebook.",
+        "alt_description":"One of the pages has been torn out. You can make out something on the page underneath but the impression is too faint to read.",
+        "options":{
+            "Open notebook": {
+                "active":true,
+                "items_affected": {
+                    "notebook" :{
+                        "image":"toggle-image",
+                        "description":"toggle-description",
+                        "options": {
+                            "Open notebook": {
+                                "active":false
+                            },
+                            "Close notebook": {
+                                "active":true
+                            },
+                            "Use pencil on notebook": {
+                                "active_condition":true
+                            }
+                        }
+                    }
+                }               
+            },
+            "Close notebook": {
+                "active":false,
+                "items_affected": {
+                    "notebook" :{
+                        "image":"toggle-image",
+                        "description":"toggle-description",
+                        "options": {
+                            "Open notebook": {
+                                "active":true
+                            },
+                            "Close notebook": {
+                                "active":false
+                            },
+                            "Use pencil on notebook": {
+                                "active_condition": false
+                            }
+                        }
+                    }
+                }
+            },
+            "Use pencil on notebook": {
+                "active":false,
+                "active_condition":false,
+                "selected_item":"pencil",
+                "items_affected": {
+                    "notebook": {
+                        "image":"notebook-coloured",
+                        "alt_image": "notebook",
+                        "description": "You can make out some words through the scribbles." ,
+                        "alt_description": "A highly sought after IM notebook.",
+                        "options": {
+                            "Use pencil on notebook":{
+                                "active":false,
+                                "selected_item": ""
+                            },
+                            "Open notebook": {
+                                "items_affected": {
+                                    "notebook": {
+                                        "description": "You can make out some words through the scribbles which read \"DAVE\" and \"594A21\"" 
+                                    }
+                                }
+                                
+                            }                          
+                        }
+                    }
+                },
+                "remove_item": "battery"
+            }                                  
+        }
+    },
+    "mobile_phone": {
+        "image":"phone",
+        "name":"Mobile phone",
+        "description":"Standard issue IM Samsung Galaxy A6.",
+        "options": {
+            "Switch on phone": {
+                "active":true,
+                "go_to":"phone"
+            }  
+        }
+    },
+    "screwdriver_head": {
+        "image":"screwdriver_head",
+        "name":"Screwdriver bit",
+        "description":"An interchangeable screwdriver head for flat and crosshead screws."
+    },
+    "screwdriver": {
+        "image":"screwdriver",
+        "name":"Screwdriver",
+        "description":"An adjustable screwdriver. The bit is missing, though.",
+        "options": {
+            "Fit flathead screwdriver bit": {
+                "active":false,
+                "selected_item":"screwdriver_head",
+                "items_affected":{
+                    "screwdriver": {
+                        "image":"screwdriver_flathead",
+                        "description":"An adjustable screwdriver with a flathead bit.",
+                        "options": {
+                            "Fit flathead screwdriver bit": {
+                                "active":false
+                            },
+                            "Remove screwdriver bit": {
+                                "active":true
+                            }
+                        }
+                    }
+                },
+                "rooms_affected": {
+                    "stationery_cupboard": {
+                        "options": {
+                            "Use screwdriver on cupboard": {
+                                "active_condition":false
+                            }
+                        }
+                    }
+                },                
+                "remove_item":"screwdriver_head"
+            },
+            "Fit crosshead screwdriver bit": {
+                "active":false,
+                "selected_item":"screwdriver_head",
+                "items_affected":{
+                    "screwdriver": {
+                        "image":"screwdriver_crosshead",
+                        "description":"An adjustable screwdriver with a crosshead bit.",
+                        "options": {
+                            "Fit crosshead screwdriver bit": {
+                                "active":false
+                            },
+                            "Remove screwdriver bit": {
+                                "active":true
+                            }
+                        }
+                    }
+                },
+                "rooms_affected": {
+                    "stationery_cupboard": {
+                        "options": {
+                            "Use screwdriver on cupboard": {
+                                "active_condition":true
+                            }
+                        }
+                    }
+                },
+                "remove_item":"screwdriver_head"
+            },
+            "Remove screwdriver bit": {
+                "active":false,
+                "add_item":"screwdriver_head",
+                "items_affected":{
+                    "screwdriver": {
+                        "image":"screwdriver",
+                        "description":"An adjustable screwdriver without a bit.",
+                        "options": {
+                            "Fit crosshead screwdriver bit": {
+                                "active":true
+                            },
+                            "Fit flathead screwdriver bit": {
+                                "active":true
+                            },
+                            "Remove screwdriver bit": {
+                                "active":false
+                            }                            
+                        }  
+                    }              
+                },
+                "rooms_affected": {
+                    "stationery_cupboard": {
+                        "options": {
+                            "Use screwdriver on cupboard": {
+                                "active_condition":false
+                            }
+                        }
+                    }
+                }                
+            }            
+        }
+    },
+    "rubbish": {
+        "name":"Paper with tic tac toe doodles",
+        "image":"rubbish",
+        "description":"Someone obviously has not been busy enough!"
+    },
+    "stamp": {
+        "image":"stamp",
+        "name":"Certification stamp"
+    },
+    "seating_plan": {
+        "image":"seating_plan",
+        "name":"Desk reservation chart"
+    },
+    "parcel": {
+        "image":"parcel",
+        "name":"A parcel",
+        "description":"It's securely fastened shut with that really annoying Amazon parcel tape. You are going to need something sharp to get into this parcel.",
+        "options": {
+            "Open parcel":{
+                "active":false,
+                "selected_item": "scissors",
+                "replace_item":["parcel","puzzle_box"],
+                "remove_item":"scissors",
+                "message":"Inside the parcel you find a strange looking puzzle box."
+            }
+        }
+    },
+    "puzzle_box":{
+        "image":"box-closed",
+        "name":"A puzzle box",
+        "description":"A wooden box with a series of sliders on the top. The wooden sliders can move up and down. Looks like you will need to get the right pattern to open the box.",
+        "options": {
+            "Examine puzzle lock": {
+                "active":true,
+                "go_to":"puzzle_box"
+            }
+        }
+    },
+    "puzzle_box_open":{
+        "image":"box-open",
+        "name":"An open box",
+        "description":"A wooden box with a torch inside.",
+        "options": {
+            "Take torch": {
+                "active":true,
+                "add_item":"torch",
+                "remove_item":"puzzle_box_open"
+            }
+        }
+    },
+    "scissors": {
+        "image":"scissors",
+        "name":"Scissors",
+        "description":"A pair of scissors."
+    },
+    "paper_one": {
+        "name":"Printing",
+        "image":"paper_one",
+        "description":"Document number 4057612_1. A '#' printed in red, how odd."
+    },
+    "paper_two": {
+        "name":"Printing",
+        "image":"paper_two",
+        "description":"Document number 4056214_1. A '#' printed in blue, why?"
+    },
+    "paper_three": {
+        "name":"Printing",
+        "image":"paper_three",
+        "description":"Document number 4057018_1. An 'X' printed in black, how strange."
+    },   
+    "paper_four": {
+        "name":"Printing",
+        "image":"paper_four",
+        "description":"Document number 4506113_1. A '#' printed in yellow, what is the reason for this?"
+    },                         
+    "calendar": {
+        "image":"calendar_12",
+        "name":"Desk Calendar",
+        "description": "Monday 12th July - 'Check desk bookings'",
+        "options": {
+            "Go to Monday": {
+                "active":false,
+                "items_affected": {
+                    "calendar": {
+                        "change_image":"calendar_12",
+                        "description": "Monday 12th July - 'Check desk bookings'",
+                        "options": {
+                            "Go to Monday": {
+                                "active":false
+                            },
+                            "Go to Tuesday": {
+                                "active":true
+                            },
+                            "Go to Wednesday": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            },            
+            "Go to Tuesday": {
+                "active":true,
+                "items_affected": {
+                    "calendar": {
+                        "change_image":"calendar_13",
+                        "description": "Tuesday 13th July - 'Order Counsel's notebooks'",
+                        "options": {
+                            "Go to Monday": {
+                                "active":true
+                            },
+                            "Go to Tuesday": {
+                                "active":false
+                            },
+                            "Go to Wednesday": {
+                                "active":true
+                            },
+                            "Go to Thursday": {
+                                "active":false
+                            }                            
+
+                        }
+                    }
+                }
+            },            
+            "Go to Wednesday": {
+                "active":false,
+                "items_affected": {
+                    "calendar": {
+                        "change_image":"calendar_14",
+                        "description": "Wednesday 14th July - 'Attend remote training'",
+                        "options": {
+                            "Go to Monday": {
+                                "active":false
+                            },                            
+                            "Go to Tuesday": {
+                                "active":true
+                            },
+                            "Go to Wednesday": {
+                                "active":false
+                            },
+                            "Go to Thursday": {
+                                "active":true
+                            },
+                            "Go to Friday": {
+                                "active":false
+                            }                            
+
+                        }
+                    }
+                }
+            },
+            "Go to Thursday": {
+                "active":false,
+                "items_affected": {
+                    "calendar": {
+                        "change_image":"calendar_15",
+                        "description": "Thursday 15th July - 'IT Bowman coming to fix printer'",
+                        "options": {
+                            "Go to Tuesday": {
+                                "active":false
+                            },                            
+                            "Go to Wednesday": {
+                                "active":true
+                            },
+                            "Go to Thursday": {
+                                "active":false
+                            },
+                            "Go to Friday": {
+                                "active":true
+                            },
+                            "Go to Weekend": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            },
+            "Go to Friday": {
+                "active":false,
+                "items_affected": {
+                    "calendar": {
+                        "change_image":"calendar_16",
+                        "description": "Friday 16th July - 'Contact Restore for files'",
+                        "options": {
+                            "Go to Wednesday": {
+                                "active":false
+                            },                            
+                            "Go to Thursday": {
+                                "active":true
+                            },
+                            "Go to Friday": {
+                                "active":false
+                            },
+                            "Go to Weekend": {
+                                "active":true
+                            }                            
+
+                        }
+                    }
+                }
+            },
+            "Go to Weekend": {
+                "active":false,
+                "items_affected": {
+                    "calendar": {
+                        "change_image":"calendar_17",
+                        "description": "Saturday and Sunday 17th/18th July",
+                        "options": {
+                            "Go to Thursday": {
+                                "active":false
+                            },                            
+                            "Go to Friday": {
+                                "active":true
+                            },
+                            "Go to Weekend": {
+                                "active":false
+                            }                
+                        }
+                    }
+                }
+            }                    
+        }
+    },
+    "post-it": {
+        "name":"A Post-it Note",
+        "image":"post-it",
+        "description":"A post-it note on which someone has doodled some drawings."
+    }
+    ,"business-card": {
+        "name":"Business Card",
+        "image":"business-card",
+        "description":"An England Rugby business card, with an interesting logo on it."
+    } 
+}

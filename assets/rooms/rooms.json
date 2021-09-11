@@ -1,0 +1,1719 @@
+{
+    "corridor_1_north": {
+        "image": "corridor_1_north",
+        "description": "",
+        "directions": {
+            "north": "aisle_1_north",
+            "east": "corridor_1_east",
+            "south": "corridor_1_south",
+            "west": "corridor_1_west"
+        }
+    },    
+    "corridor_1_east": {
+        "image": "corridor_1_east",
+        "image_suffix": {
+            "images":["_parcel"],
+            "active":[true]
+        },           
+        "description": "",
+        "directions": {
+            "north": "corridor_2_east",
+            "east": "corridor_1_south",
+            "south": "corridor_1_west",
+            "west": "corridor_1_north"
+        }
+    },       
+    "corridor_1_south": {
+        "image": "corridor_1_south",
+        "description":"The door to the outside world!",
+        "options": {
+            "Open door": {
+                "active": true,
+                "rooms_affected": {
+                    "corridor_1_south": {
+                        "description": "It is locked, of course. What did you expect?",
+                        "options" : {
+                            "Examine lock": {
+                                "active": true
+                            },
+                            "Open door": {
+                                "active": false
+                            }
+                        }
+                    }
+                }
+            },
+            "Examine lock" : {
+                "active": false,
+                "go_to": "exit_door",
+                "rooms_affected": {
+                    "corridor_1_south": {
+                        "description": "The exit and the only barrier to the outside world is a locked door."
+                    }
+                }                
+
+            }
+        },
+        "directions": {
+            "east": "corridor_1_west",
+            "south": "corridor_1_north",
+            "west": "corridor_1_east"
+        }
+    },  
+    "corridor_1_west": {
+        "image": "corridor_1_west",
+        "description": "",
+        "options": {
+            "Use printer": {
+                "active": true,
+                "go_to": "printer"
+            }
+        },
+        "directions": {
+            "east": "corridor_1_north",
+            "south": "corridor_1_east",
+            "west": "corridor_1_south"
+        },
+        "magnify":true
+    },           
+    "corridor_2_north": {
+        "image": "corridor_2_north",
+        "description": "You are standing in the Newbury office.",
+        "directions": {
+            "north": "aisle_2_north",
+            "east": "corridor_2_east",
+            "south": "corridor_2_south",
+            "west": "corridor_2_west"
+        }
+    },
+    "corridor_2_east": {
+        "image": "corridor_2_east",
+        "image_suffix": {
+            "images":["_parcel"],
+            "active":[true]
+        },        
+        "description": "",
+        "options": {
+            "Examine stationery cupboard": {
+                "active":true,
+                "go_to": "stationery_cupboard"
+            }
+        },
+        "directions": {
+            "north": "corridor_3_east",
+            "east": "corridor_2_south",
+            "south": "corridor_2_west",
+            "west": "corridor_2_north"
+        }
+    },    
+    "corridor_2_south": {
+        "image": "corridor_2_south",
+        "description": "The door is firmly locked.",
+        "directions": {
+            "east": "corridor_2_west",
+            "south": "corridor_2_north",
+            "west": "corridor_2_east"
+        }
+    },      
+    "corridor_2_west": {
+        "image": "corridor_2_west",           
+        "description": "",
+        "directions": {
+            "north": "corridor_1_west",
+            "east": "corridor_2_north",
+            "south": "corridor_2_east",
+            "west": "corridor_2_south"
+        }
+    },   
+    "corridor_3_north": {
+        "image": "corridor_3_north",
+        "image_suffix": {
+            "images":["_post_it"],
+            "active":[true]
+        },               
+        "description": "",
+        "directions": {
+            "north": "aisle_3_north",
+            "east": "corridor_3_east",
+            "south": "corridor_3_south",
+            "west": "corridor_3_west"
+        }
+    },        
+    "corridor_3_east": {
+        "image": "corridor_3_east",
+        "description": "",
+        "directions": {
+            "north": "corridor_4_east",
+            "east": "corridor_3_south",
+            "south": "corridor_3_west",
+            "west": "corridor_3_north"
+        }
+    },     
+    "corridor_3_south": {
+        "image": "corridor_3_south",
+        "description": "",
+        "directions": {
+            "east": "corridor_3_west",
+            "south": "corridor_3_north",
+            "west": "corridor_3_east"
+        },
+        "options": {
+            "Open cupboard": {
+                "active":true,
+                "go_to":"open_cupboard"
+            },
+            "Examine seating plan": {
+                "active":true,
+                "go_to":"seating_plan"
+            }            
+        }
+    },     
+    "corridor_3_west": {
+        "image": "corridor_3_west",
+        "description": "",
+        "directions": {
+            "north": "corridor_2_west",
+            "east": "corridor_3_north",
+            "south": "corridor_3_east",
+            "west": "corridor_3_south"
+        },
+        "options": {
+            "Examine stationery cupboard": {
+                "active":true,
+                "go_to": "stationery_cupboard"
+            }
+        }        
+    },   
+    "corridor_4_north": {
+        "image": "corridor_4_north",
+        "description": "",
+        "directions": {
+            "north": "aisle_4_north",
+            "east": "corridor_4_east",
+            "south": "corridor_4_south",
+            "west": "corridor_4_west"
+        }
+    },        
+    "corridor_4_east": {
+        "image": "corridor_4_east",
+        "description": "",
+        "directions": {
+            "north": "corridor_5_east",
+            "east": "corridor_4_south",
+            "south": "corridor_4_west",
+            "west": "corridor_4_north"
+        }
+    },     
+    "corridor_4_south": {
+        "image": "corridor_4_south",
+        "description": "",
+        "directions": {
+            "east": "corridor_4_west",
+            "south": "corridor_4_north",
+            "west": "corridor_4_east"
+        }
+    },     
+    "corridor_4_west": {
+        "image": "corridor_4_west",
+        "image_suffix": {
+            "images":["_parcel"],
+            "active":[true]
+        },             
+        "description": "",
+        "directions": {
+            "north": "corridor_3_west",
+            "east": "corridor_4_north",
+            "south": "corridor_4_east",
+            "west": "corridor_4_south"
+        },
+        "options": {
+            "Examine seating plan": {
+                "active":true,
+                "go_to":"seating_plan"
+            }            
+        }
+    },    
+    "corridor_5_north": {
+        "image": "corridor_5_north",
+        "description": "",
+        "directions": {
+            "north":"aisle_5_north",
+            "east": "corridor_5_east",
+            "south": "corridor_5_south",
+            "west": "corridor_5_west"
+        }
+    },      
+    "corridor_5_east": {
+        "image": "corridor_5_east",
+        "description": "",
+        "directions": {
+            "east": "corridor_5_south",
+            "south": "corridor_5_west",
+            "west": "corridor_5_north"
+        },
+        "options": {
+            "Use stepstool to reach key": {
+                "active": false,
+                "active_condition":false,
+                "selected_item":"stepstool",
+                "go_to":"high_cupboard",
+                "remove_item":"stepstool",
+                "rooms_affected": {
+                    "corridor_1_east":{
+                        "image":"corridor_1_east_stool"
+                    },
+                    "corridor_2_east":{
+                        "image":"corridor_2_east_stool"
+                    },
+                    "corridor_3_east":{
+                        "image":"corridor_3_east_stool"
+                    },
+                    "corridor_4_east":{
+                        "image":"corridor_4_east_stool"
+                    },
+                    "corridor_5_east":{
+                        "options": {
+                            "Use stepstool to reach key": {
+                                "selected_item":""                           
+                            }
+    
+                        }
+                    },
+                    "aisle_5_south":{
+                        "image":"aisle_5_south_stool"
+                    }                                                                                              
+                }
+            }
+        },        
+        "click_option": {
+            "active":true,
+            "area": [
+                [84.2,4.0],
+                [86.4,4.0],
+                [84.2,9.5],
+                [86.4,9.5]
+            ],
+            "rooms_affected": {
+                "corridor_5_east": {
+                    "description": "There is a key on top of the cabinet but it is too high to reach.",
+                    "options": {
+                        "Use stepstool to reach key": {
+                            "active_condition":true,
+                            "selected_item":"stepstool"
+                        }
+                    }
+                }
+            }
+        },
+        "magnify": true
+    },          
+    "corridor_5_south": {
+        "image": "corridor_5_south",
+        "description": "",
+        "directions": {
+            "east": "corridor_5_west",
+            "south": "corridor_5_north",
+            "west": "corridor_5_east"
+        }
+    },     
+    "corridor_5_west": {
+        "image": "corridor_5_west",
+        "image_suffix": {
+            "images":["_parcel"],
+            "active":[true]
+        },         
+        "description": "",
+        "directions": {
+            "east": "corridor_5_north",
+            "south": "corridor_5_east",
+            "west": "corridor_5_south",
+            "north": "corridor_4_west"
+        }
+    },       
+    "aisle_1_north": {
+        "image":"aisle_1_north",
+        "description":"",
+        "directions":{
+            "south": "aisle_1_south",
+            "east":"aisle_1_east"
+        },
+        "options": {
+            "Examine seating plan": {
+                "active":true,
+                "go_to":"seating_plan"
+            }
+        }
+    },    
+    "aisle_1_east": {
+        "image":"aisle_1_east",
+        "description":"",
+        "options": {
+            "Open drawer": {
+                "active": true,
+                "rooms_affected": {
+                    "aisle_1_east": {
+                        "description": "The drawer is locked."
+                    }
+                }
+            },
+            "Unlock drawer": {
+                "active":false,
+                "selected_item":"desk-key",
+                "remove_item":"desk-key",                
+                "rooms_affected":{
+                    "aisle_1_east": {
+                        "description": "The drawer is unlocked.",
+                        "image":"aisle_1_east_key",
+                        "options": {
+                            "Open drawer": {
+                                "active":true,
+                                "go_to": "open_drawer",
+                                "description": "The drawer is unlocked."
+                            },
+                            "Unlock drawer": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "directions":{
+            "west":"aisle_1_north",
+            "east":"aisle_1_south"
+        }
+    },        
+    "aisle_1_south": {
+        "image":"aisle_1_south",
+        "directions":{
+            "south":"aisle_1_north",
+            "north":"corridor_1_south",
+            "west":"aisle_1_east"            
+        }
+    },       
+    "aisle_2_north": {
+        "image":"aisle_2_north",
+        "description":"",
+        "directions":{
+            "south": "aisle_2_south",
+            "west": "aisle_2_west",
+            "east":"aisle_2_east"
+        },
+        "options": {
+            "Examine clock": {
+                "active":true,
+                "go_to":"wall_clock"
+            },
+            "Examine seating plan": {
+                "active":true,
+                "go_to":"seating_plan"
+            }
+        }
+    },
+    "aisle_2_east": {
+        "image":"aisle_2_east",
+        "description":"The pedestal under this desk has been moved.",
+        "options": {
+            "Examine pedestal": {
+                "active":true,
+                "go_to": "pedestal"
+            }
+        },
+        "directions":{
+            "west":"aisle_2_north",
+            "east":"aisle_2_south"
+        },
+        "click_option": {
+            "active":false,
+            "area": [
+                [52,10],
+                [65,10],
+                [52,28],
+                [65,28]
+            ],            
+            "go_to":"battery_bucket"
+        }
+    },      
+    "aisle_2_south": {
+        "image":"aisle_2_south",
+        "description":"",
+        "directions":{
+            "east":"aisle_2_west",
+            "south":"aisle_2_north",
+            "north":"corridor_2_south",
+            "west":"aisle_2_east"
+        }
+    },     
+    "aisle_2_west": {
+        "image":"aisle_2_west",
+        "description":"",
+        "directions":{
+            "east":"aisle_2_north",
+            "west":"aisle_2_south"
+        },
+        "click_option": {
+            "active":true,
+            "area":[
+                [4.9,60.2],
+                [20.1,60.2],
+                [4.9,74],
+                [20.1,74]
+            ],
+            "add_item":"calendar",
+            "rooms_affected": {
+                "aisle_2_west": {
+                    "image": "aisle_2_west_no_calendar",
+                    "click_option": {
+                        "active":false
+                    }
+                }
+            }
+        },
+        "magnify":true
+    },         
+    "aisle_3_north": {
+        "image":"aisle_3_north",
+        "image_suffix": {
+            "images":["_post_it"],
+            "active":[true]
+        },          
+        "description":"",
+        "directions":{
+            "south": "aisle_3_south",
+            "west": "aisle_3_west",
+            "east":"aisle_3_east"
+        },
+        "options": {
+            "Examine target board": {
+                "active":true,
+                "go_to":"target_board"
+            }
+        },
+        "click_option": {
+            "active":true,
+            "area": [
+                [72,53],
+                [79,53],
+                [72,60],
+                [79,60]
+            ],
+            "add_item": "post-it",
+            "rooms_affected": {
+                "aisle_3_north": {
+                    "image_suffix": {
+                        "images":["_post_it"],
+                        "active":[false]
+                    }
+                },
+                "target_board": {
+                    "image_suffix": {
+                        "images":["_post_it"],
+                        "active":[false]
+                    },
+                    "options": {
+                        "Take Post-it": {
+                            "active":false
+                        }
+                    }
+                },                
+                "corridor_3_north": {
+                    "image_suffix": {
+                        "images":["_post_it"],
+                        "active":[false]
+                    }
+                }                
+            }
+        }
+    },
+    "aisle_3_east": {
+        "image":"aisle_3_east",
+        "description":"",
+        "directions":{
+            "south": "aisle_3_west",
+            "west": "aisle_3_north",
+            "east":"aisle_3_south"
+        },
+        "magnify":true,
+        "click_option": {
+            "active":true,
+            "area": [
+                [73,51],
+                [88,51],
+                [73,57],
+                [88,57]
+            ],
+            "add_item":"broken_pencil",
+            "rooms_affected": {
+                "aisle_3_east": {
+                    "click_option": {
+                        "active":false
+                    },
+                    "image":"aisle_3_east_no_pencil"
+                }
+            }
+        }        
+    },    
+    "aisle_3_south": {
+        "image":"aisle_3_south",
+        "description":"",
+        "directions":{
+            "south": "aisle_3_north",
+            "west": "aisle_3_east",
+            "east":"aisle_3_west",
+            "north":"corridor_3_south"
+        }
+    },    
+    "aisle_3_west": {
+        "image":"aisle_3_west",
+        "description":"",
+        "directions":{
+            "south": "aisle_3_east",
+            "west": "aisle_3_south",
+            "east":"aisle_3_north"
+        },
+        "magnify":"true",
+        "click_option": {
+            "active":true,
+            "area": [
+                [2,49],
+                [10,49],
+                [2,59],
+                [10,59]
+            ],
+            "add_item":"stamp",
+            "rooms_affected": {
+                "aisle_3_west": {
+                    "click_option": {
+                        "active":"false"                        
+                    },
+                    "image":"aisle_3_west_no_stamp"
+                },
+                "corridor_3_north": {
+                    "image":"corridor_3_north_no_stamp"
+                }                
+            }
+        }
+    },         
+    "aisle_4_north": {
+        "image":"aisle_4_north",
+        "description":"",
+        "directions":{
+            "south": "aisle_4_south",
+            "west": "aisle_4_west",
+            "east":"aisle_4_east"
+        },
+        "options": {
+            "Examine bins": {
+                "active":true,
+                "go_to": "bins"
+            }
+        }
+    },    
+    "aisle_4_east": {
+        "image":"aisle_4_east",
+        "description":"",
+        "directions":{
+            "south": "aisle_4_west",
+            "west": "aisle_4_north",
+            "east":"aisle_4_south"
+        },
+        "click_option": {
+            "active":true,
+            "area": [
+                [79,60],
+                [97,60],
+                [79,92],
+                [97,92]
+            ],
+            "add_item":"seating_plan",
+            "rooms_affected": {
+                "aisle_4_east": {
+                    "click_option": {
+                        "active":"false"                        
+                    },
+                    "image":"aisle_4_east_no_paper"
+                }
+            }
+        }        
+    },   
+    "aisle_4_south": {
+        "image":"aisle_4_south",
+        "description":"",
+        "directions":{
+            "south": "aisle_4_north",
+            "west": "aisle_4_east",
+            "east":"aisle_4_west",
+            "north":"corridor_4_south"
+        }
+    },        
+    "aisle_4_west": {
+        "image":"computer",
+        "description":"",
+        "directions":{
+            "south": "aisle_4_east",
+            "west": "aisle_4_south",
+            "east":"aisle_4_north"
+        },
+        "click_option": {
+            "active":true,
+            "area": [
+                [4,63],
+                [15,63],
+                [4,75],
+                [15,75]
+            ],
+            "add_item":"business-card",
+            "rooms_affected": {
+                "aisle_4_west": {
+                    "click_option": {
+                        "active":false
+                    }
+                }
+            }
+        },        
+        "options": {
+            "Use PC": {
+                "active":true,
+                "go_to":"computer"
+            }
+        },
+        "magnify":true
+    },  
+    "aisle_5_north": {
+        "image":"aisle_5_north",
+        "description":"",
+        "directions":{
+            "south": "aisle_5_south",
+            "west": "aisle_5_west",
+            "east":"aisle_5_east"
+        },
+        "options": {
+            "Examine seating plan": {
+                "active":true,
+                "go_to":"seating_plan"
+            }            
+        }
+    },    
+    "aisle_5_east": {
+        "image":"aisle_5_east",
+        "description":"",
+        "directions":{
+            "south": "aisle_5_west",
+            "west": "aisle_5_north",
+            "east":"aisle_5_south"
+        },
+        "options" :{ 
+            "Examine briefcase": {
+                "active":true,
+                "go_to": "briefcase"
+            }
+        },
+        "click_option": {
+            "active":true,
+            "area": [
+                [31,20],
+                [39,20],
+                [31,28],
+                [39,28]            
+            ],
+            "add_item":"scissors",
+            "rooms_affected" :{
+                "aisle_5_east": {
+                    "image":"aisle_5_east_no_scissors",
+                    "click_option": {
+                        "active":false
+                    }
+                }
+            }
+        },
+        "magnify":true
+    },   
+    "aisle_5_south": {
+        "image":"aisle_5_south",
+        "description":"",
+        "directions":{
+            "south": "aisle_5_north",
+            "west": "aisle_5_east",
+            "east":"aisle_5_west",
+            "north":"corridor_5_south"
+        }
+    },        
+    "aisle_5_west": {
+        "image":"aisle_5_west",
+        "description":"",
+        "directions":{
+            "south": "aisle_5_east",
+            "west": "aisle_5_south",
+            "east":"aisle_5_north"
+        },
+        "click_option": {
+            "active":true,
+            "area": [
+                [33,64],
+                [46,64],
+                [33,74],
+                [46,74]
+            ],
+            "add_item":"mobile_phone",
+            "rooms_affected": {
+                "aisle_5_west": {
+                    "image":"aisle_5_west_no_phone",
+                    "click_option":{
+                        "active":false
+                    }
+                }
+            }
+        }
+    },   
+    "target_board":{
+        "image":"ball_target",
+        "image_format":"png",
+
+        "image_suffix": {
+            "images":["_post_it"],
+            "active":[true]
+        },   
+        "directions": {
+            "south":"aisle_3_north"
+        },
+        "options": {
+            "Take Post-it": {
+                "active":true,
+                "rooms_affected": {
+                    "target_board": {
+                        "options": {
+                            "Take Post-it": {
+                                "active":false
+                            }
+                        },
+                        "image_suffix": {
+                            "images":["_post_it"],
+                            "active":["false"]
+                        }
+                    },
+                    "aisle_3_north": {
+                        "click_option": {
+                            "active":false
+                        },
+                        "image_suffix": {
+                            "images":["_post_it"],
+                            "active":["false"]
+                        }
+                    },
+                    "corridor_3_north": {
+                        "image_suffix": {
+                            "images":["_post_it"],
+                            "active":["false"]
+                        }
+                    }                        
+                },
+                "add_item":"post-it"
+            },
+            "Take torch": {
+                "active":false,
+                "add_item":"torch",
+                "remove_item":"business-card",
+                "rooms_affected": {
+                    "target_board": {
+                        "options": {
+                            "Take torch": {
+                                "active":false
+                            }
+                        },
+                        "image_format":"jpg",
+                        "image":"ball_target_open"
+                    },
+                    "aisle_4_west": {
+                        "click_option": {
+                            "active":false
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "open_cupboard": {
+        "image":"cupboard_open_stool",
+        "click_option": {
+            "active":true,
+            "area": [
+                [42,57],
+                [65,57],
+                [42,82],
+                [65,82]
+            ],
+            "add_item": "stepstool",
+            "rooms_affected": {
+                "open_cupboard": {
+                    "image":"cupboard_open",
+                    "click_option": {
+                        "active":false
+                    }
+                }
+            }                                   
+        },
+        "directions": {
+            "west": "corridor_3_east",
+            "east": "corridor_3_west"
+        }
+    },         
+    "wall_clock":{
+        "image": "wall_clock_with_clock",
+        "description": "There is a clock hanging on the wall.",
+        "directions": {
+            "south": "aisle_2_north"
+        },
+        "options": {
+            "Take clock": {
+                "active": true,
+                "add_item":"clock",
+                "rooms_affected":{
+                    "wall_clock": {
+                        "image":"wall_clock_no_clock",    
+                        "description": " ",               
+                        "options": {
+                            "Take clock": {
+                                "active":false
+                            }
+                        }
+                    },
+                    "corridor_1_north": {
+                        "image":"corridor_1_north_no_clock"
+                    },                       
+                    "corridor_2_north": {
+                        "image":"corridor_2_north_no_clock"
+                    },             
+                    "corridor_5_west": {
+                        "image":"corridor_5_west_no_clock"
+                    },                       
+                    "aisle_2_north": {
+                        "image":"aisle_2_north_no_clock",
+                        "options": {
+                            "Examine clock": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "briefcase": {
+        "image":"briefcase",
+        "code_panel": {
+            "name": "briefcase-lock",
+            "code":["492935"],
+            "locked":true,
+            "target":"briefcase_open"
+        },        
+        "directions": {
+            "south":"aisle_5_east"
+        }
+    },
+    "briefcase_open": {
+        "image":"briefcase_open_ruler",        
+        "directions": {
+            "south":"aisle_5_east"
+        },
+        "options": {
+            "Take ruler": {
+                "active":true,
+                "add_item":"ruler",
+                "rooms_affected": {
+                    "briefcase_open":{
+                        "image":"briefcase_open",
+                        "options": {
+                            "Take ruler": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "stationery_cupboard": {
+        "image":"stationery_cupboard_locked",
+        "image_suffix": {
+            "images":["_parcel"],
+            "active":[true]
+        },             
+        "description":"The cupboard appears to be screwed shut with a locking plate. Obviously counsel's notepads are in demand.",
+        "directions": {
+            "east": "corridor_2_east",
+            "west":"corridor_3_west"
+        },
+        "options": {
+            "Open stationery cupboard" : {
+                "active": false,
+                "go_to":"stationery_cupboard_open"
+            },
+            "Use screwdriver on cupboard": {
+                "active":false,
+                "active_condition":false,
+                "selected_item":"screwdriver",
+                "description":" ",
+                "rooms_affected": {
+                    "stationery_cupboard": {
+                        "image":"stationery_cupboard",
+                        "options":{
+                            "Use screwdriver on cupboard": {
+                                "active_condition":false
+                            },
+                            "Open stationery cupboard": {
+                                "active":true
+                            }
+                        }     
+                    }
+                }
+            },
+            "Examine post tray": {
+                "active":true,
+                "go_to":"post_tray"
+            }
+        }
+    },  
+    "stationery_cupboard_open":{
+        "image":"stationery_cupboard_open",
+        "image_suffix": {
+            "images":["_parcel"],
+            "active":[true]
+        },               
+        "click_option":{
+            "active":true,
+            "area": [
+                [69,87],
+                [73,87],
+                [69,98],
+                [73,98]
+            ],
+            "add_item":"pencil_sharpener",
+            "rooms_affected": {
+                "stationery_cupboard_open": {
+                    "click_option": {
+                        "active":false
+                    },
+                    "image": "stationery_cupboard_open_no_knight"
+                }
+            }
+        },
+        "directions": {
+            "east":"corridor_2_east",
+            "west":"corridor_3_west"
+        },
+        "magnify":true
+    },
+    "puzzle_box": {
+        "image":"puzzle_box",
+        "stay_put":true,
+        "code_panel": {
+            "name": "puzzle-box-lock",
+            "code":["10010101"],
+            "locked":true,
+            "replace_item":["puzzle_box","puzzle_box_open"],
+            "target":"back"
+        },
+        "directions": {
+            "south":"back"
+        }             
+    },
+    "post_tray":{
+        "image":"post_tray_parcel",
+        "options":{
+            "Take parcel":{
+                "active":true,
+                "add_item":"parcel",
+                "rooms_affected":{
+                    "post_tray": {
+                        "image":"post_tray",
+                        "options": {
+                            "Take parcel":{
+                                "active":false
+                            }
+                        }
+                    },
+                    "stationery_cupboard": {
+                        "image_suffix": {
+                            "images":["_parcel"],
+                            "active":[false]
+                        }
+                    },
+                    "stationery_cupboard_open": {
+                        "image_suffix": {
+                            "images":["_parcel"],
+                            "active":[false]
+                        }
+                    },                 
+                    "corridor_1_east": {
+                        "image_suffix": {
+                            "images":["_parcel"],
+                            "active":[false]
+                        }
+                    },                       
+                    "corridor_2_east": {
+                        "image_suffix": {
+                            "images":["_parcel"],
+                            "active":[false]
+                        }
+                    },
+                    "corridor_4_west": {
+                        "image_suffix": {
+                            "images":["_parcel"],
+                            "active":[false]
+                        }
+                    },
+                    "corridor_5_west": {
+                        "image_suffix": {
+                            "images":["_parcel"],
+                            "active":[false]
+                        }
+                    }                 
+                }
+            }
+        },
+        "directions": {
+            "south":"stationery_cupboard"
+        }
+    },
+    "bins" :{
+        "image": "bin",
+        "options": {
+            "Take rubbish": {
+                "active": true,
+                "add_item":"rubbish",
+                "rooms_affected": {
+                    "bins": {
+                        "image":"bin_empty",
+                        "options": {
+                            "Take rubbish": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "directions": {
+            "south": "aisle_4_north"
+        }
+    },
+    "exit_door": {
+        "image":"exit_door",
+        "description": "The door is locked. It looks like you need a keycard to unlock it.",
+        "options": {
+            "Use keycard on door": {
+                "active": false,
+                "selected_item": "key-card",
+                "rooms_affected": {
+                    "exit_door": {
+                        "description": "The door is still locked. For some reason the keycard did not work."
+                    }
+                }
+            },
+            "Unlock door with keycard": {
+                "active": false,
+                "selected_item": "activated-key-card",
+                "rooms_affected": {
+                    "exit_door": {
+                        "description": "The door is unlocked! The outside world awaits you!",
+                        "image":"exit_door_unlocked",
+                        "options": {
+                            "Unlock door with keycard": {
+                                "active":false,
+                                "active_condition":false
+                            },
+                            "Open door": {
+                                "active":true
+                            }
+                        }
+                    }
+                }
+            },  
+            "Open door": {
+                "active":false,
+                "go_to":"end"
+            }          
+        },
+        "directions": {
+            "south": "corridor_1_south"
+        }
+    },
+    "printer": {
+        "image": "printer",
+        "directions": {
+            "south": "corridor_1_west"
+        },
+        "click_option":{
+            "active":true,
+            "area": [
+                [14,56],
+                [34,56],
+                [14,75],
+                [34,75]
+            ],
+            "add_item":"screwdriver",
+            "rooms_affected": {
+                "printer": {
+                    "click_option": {
+                        "active":false
+                    },
+                    "image": "printer_no_screwdriver"
+                },
+                "corridor_1_west": {
+                    "image":"corridor_1_west_no_screwdriver"
+                },
+                "corridor_2_west": {
+                    "image":"corridor_2_west_no_screwdriver"
+                }               
+            }
+        },
+        "options" : {
+            "Access control panel":{
+                "active":true,
+                "go_to": "printer_control"
+            },
+            "Take printing": {
+                "active":false,
+                "add_item": ["paper_one","paper_four","paper_two","paper_three"],
+                "rooms_affected": {
+                    "printer": { 
+                        "image": "printer_no_screwdriver",
+                        "options": {
+                            "Take printing": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "magnify":true          
+    },
+    "printer_control": {
+        "image":"printer_control_panel",
+        "options": {
+            "Log into printer" :{
+                "active":true,
+                "go_to":"printer_log_in"
+            }
+        },
+        "directions": {
+            "south":"printer"
+        }
+    },
+    "printer_log_in": {
+        "image":"printer_control_log_in",
+        "code_panel": {
+            "name": "printer-logon-panel",
+            "code":["61048","Dave Bowman","2001","594A21"],
+            "locked":true,
+            "target":"accessed-printer",
+            "error": ["Model not recognised","User not recognised","User ID not recognised","Wrong password"]
+        },
+        "directions":{
+            "south":"printer"
+        }                
+    },
+    "accessed-printer": {
+        "image":"printer_control_panel_print",
+        "options": {
+            "Run print job":{
+                "active":true,
+                "message": "There is a familiar repetitive whirring and clunking sound and four pieces of paper now sit on the printer tray.",
+                "rooms_affected": {
+                    "accessed-printer": {
+                        "image":"printer_control_panel_print_nothing",
+                        "options": {
+                            "Run print job": {
+                                "active":false
+                            },
+                            "Back to main menu": {
+                                "active":true
+                            }
+                        }
+                    },
+                    "printer": {
+                        "image":"printer_with_paper",
+                        "options": {
+                            "Take printing": {
+                                "active":true
+                            }
+                        }
+                    }
+                },
+                "go_to": "printer"
+
+            },
+            "Back to main menu": {
+                "active":false,
+                "go_to": "printer_control"
+            },
+            "Open the exit door": {
+                "active":true,
+                "go_to":"printer_hal",
+                "rooms_affected": {
+                    "accessed-printer":{
+                        "options":{
+                            "Open the exit door": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "directions":{
+            "south":"printer"
+        }        
+    },    
+    "printer_hal": {
+        "image":"printer_control_panel_hal",
+        "description":"I'm afraid I cannot do that, Dave.",
+        "directions":{
+            "south":"printer"
+        }
+    },
+    "computer": {
+        "image": "pc",
+        "description": "The computer is password protected.",
+        "options": {},
+        "directions": {
+            "south": "aisle_4_west"
+        },
+        "code_panel": {
+            "name": "pc-logon-panel",
+            "code":["GM","207819"],
+            "locked":true,
+            "target":"accessed-pc",
+            "error": ["","Wrong password"],
+            "remove_item":["stamp","seating_plan"]
+        }
+    },
+    "pc-intranet": {
+        "image": "pc_intranet",
+        "options": {
+            "Close intranet": {
+                "active":true,
+                "go_to":"accessed-pc"
+            },
+            "Close PC": {
+                "active":true,
+                "go_to":"aisle_4_west"
+            },
+            "take keycard": {
+                "active":true,
+                "add_item":"key-card"
+            }
+        },
+        "code_panel": {
+            "name": "pc-intranet",
+            "code":["D Bowman","Dave Bowman","David Bowman","Bowman","Bowman, D","Bowman, David","Bowman, Dave","Bowman D","Bowman David","Bowman Dave","DBowman","DaveBowman","DavidBowman"],
+            "not_exact":true,
+            "locked":true,
+            "target":"pc-search",
+            "temporary_target":true,
+            "error": [""]
+        }
+    },
+    "pc-search": {
+        "image": "pc_search",
+        "options": {
+            "Close intranet": {
+                "active":true,
+                "go_to":"accessed-pc"
+            },
+            "Close PC": {
+                "active":true,
+                "go_to":"aisle_4_west"
+            },
+            "Back": {
+                "active":true,
+                "go_to":"pc-intranet"
+            }
+        }
+    },    
+    "pc-activate-keycard": {
+        "image": "pc_activate_keycard",
+        "options": {
+            "Close intranet": {
+                "active":true,
+                "go_to":"accessed-pc"
+            },
+            "Close PC": {
+                "active":true,
+                "go_to":"aisle_4_west"
+            },
+            "Back": {
+                "active":true,
+                "go_to":"pc-intranet"
+            }
+        },
+        "code_panel": {
+            "name": "pc-keycard",
+            "code":["1166734"],
+            "locked":true,
+            "target":"pc-activate-keycard-activated",
+            "error": ["Card number not recognised"],
+            "replace_item": ["key-card","activated-key-card"]
+        }        
+    },     
+    "pc-activate-keycard-activated": {
+        "image": "pc_activate_keycard_activated",
+        "options": {
+            "Close intranet": {
+                "active":true,
+                "go_to":"accessed-pc"
+            },
+            "Close PC": {
+                "active":true,
+                "go_to":"aisle_4_west"
+            }
+        }      
+    },     
+    "accessed-pc": {
+        "image": "pc_desktop",
+        "description": "",
+        "options": {
+            "Open Word": {
+                "active":true,
+                "image_to_display": "pc_word",
+                "rooms_affected": {
+                    "accessed-pc":
+                    {                    
+                        "options": {
+                            "Open intranet": {
+                                "active": false
+                            },
+                            "Open Excel": {
+                                "active":false
+                            },          
+                            "Open Word": {
+                                "active": false
+                            },
+                            "Close Word": {
+                                "active": true
+                            }                                                   
+                        }
+                    }
+                }
+            },       
+            "Open Excel": {
+                "active":true,
+                "go_to": "pc-excel"
+            },                    
+            "Open intranet": {
+                "active":true,
+                "go_to":"pc-intranet"
+            },
+            "Close intranet": {
+                "active":false,
+                "image_to_display": "pc_desktop",
+                "go_to":"accessed-pc"
+            },   
+            "Close Word": {
+                "active":false,
+                "image_to_display": "pc_desktop",
+                "rooms_affected": {
+                    "accessed-pc":
+                    {                    
+                        "options": {
+                            "Open intranet": {
+                                "active": true
+                            },
+                            "Open Word": {
+                                "active": true
+                            },  
+                            "Open Excel": {
+                                "active":true
+                            },                                                                                     
+                            "Close Word": {
+                                "active": false
+                            }                        
+                        }
+                    }                    
+                }
+            },   
+            "Close Excel": {
+                "active":false,
+                "image_to_display": "pc_desktop",
+                "go-to": "accessed-pc"   
+            },                         
+            "Close PC": {
+                "active":true,
+                "go_to": "aisle_4_west",
+                "rooms_affected": {
+                    "accessed-pc":
+                    {                    
+                        "options": {
+                            "Open intranet": {
+                                "active": true
+                            },
+                            "Close intranet": {
+                                "active": false
+                            },
+                            "Open Word": {
+                                "active": true
+                            },
+                            "Close Word": {
+                                "active": false
+                            },
+                            "Open Excel": {
+                                "active": true
+                            },
+                            "Close Excel": {
+                                "active": false
+                            }                                                                                
+                        }
+                    }
+                }
+            }                   
+        },  
+        "magnify":true
+    },
+    "pc-excel": {
+        "image": "pc_excel",
+        "code_panel": {
+            "name": "excel-passcode-panel",
+            "code":["127"],
+            "locked":true,
+            "target":"",
+            "error": ""
+        },
+        "options": {
+            "Close Excel": {
+                "active":true,
+                "go_to":"accessed-pc"
+            },
+            "Close PC": {
+                "active":true,
+                "go_to":"aisle_4_west"
+            }
+        }
+    },        
+    "pedestal": {
+        "image": "side_desk_dark",
+        "description": "It is too dark to see anything.",
+        "options": {
+            "Use torch to look beside pedestal": {
+                "active": false,
+                "active_condition":false,
+                "selected_item": "torch",
+                "go_to": "pedestal_light"
+            }
+        },
+        "directions": {
+            "south": "aisle_2_east"
+        }
+    },
+    "pedestal_light": {
+        "image": "side_desk_light_key",
+        "description": "You can see a key card stuck between the pedestal and cabinet.",
+        "options": {
+            "Use ruler to get keycard": {
+                "active": false,
+                "selected_item":"ruler",
+                "add_item": "key-card",
+                "rooms_affected":{
+                    "pedestal_light": {
+                        "image":"side_desk_light",
+                        "description":" ",
+                        "options": {
+                            "Use ruler to get keycard": {
+                                "active":false,
+                                "active_condition":false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "directions": {
+            "south": "aisle_2_east"
+        }
+    },
+    "high_cupboard": {
+        "image":"high_cupboard",
+        "click_option": {
+            "active":true,
+            "area": [
+                [47,16],
+                [61,16],
+                [47,49],
+                [61,49]
+            ],
+            "add_item": "desk-key",
+            "rooms_affected": {
+                "high_cupboard": {
+                    "image":"high_cupboard_no_key",
+                    "click_option": {
+                        "active":false
+                    }                    
+                },
+                "corridor_5_east": {
+                    "image": "corridor_5_east_no_key",
+                    "options": {
+                        "Use stepstool to reach key": {
+                            "active":false,
+                            "active_condition":false
+                        }
+                    },
+                    "description":" ",
+                    "click_option": {
+                        "active":false
+                    }
+                }  
+            }                                   
+        }, 
+        "directions": {
+            "south":"corridor_5_east"
+        }
+    },
+    "open_drawer": {
+        "image":"open_drawer_book",
+        "directions": {
+            "west":"aisle_1_north",
+            "east":"aisle_1_south",
+            "south":"aisle_1_east"
+        },
+        "options": {
+            "Take notebook": {
+                "active":true,
+                "add_item":"notebook",
+                "rooms_affected": {
+                    "open_drawer": {
+                        "image":"open_drawer",
+                        "options": {
+                            "Take notebook":{
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "seating_plan": {
+        "image":"desk_plan",
+        "stay_put":true,
+        "directions": {
+            "south":"back"
+        }
+    },
+    "phone": {
+        "image": "phone",
+        "stay_put":true,
+        "code_panel": {
+            "name": "phone-passcode-panel",
+            "code":["147882"],
+            "locked":true,
+            "target":"phone_unlocked",
+            "remove_item":"rubbish",
+            "error": ""
+        },
+        "directions": {
+            "south":"back"
+        }        
+    },
+    "phone_unlocked": {
+        "image": "phone_unlocked",
+        "stay_put":true,
+        "directions": {
+            "south":"back"
+        },
+        "options": {
+            "Return to main screen": {
+                "active":false,
+                "rooms_affected": {
+                    "phone_unlocked": {
+                        "image":"phone_unlocked",
+                        "options": {
+                            "Return to main screen": {
+                                "active":false
+                            },
+                            "View gallery": {
+                                "active":true
+                            },
+                            "Check messages": {
+                                "active":true
+                            }
+                        }                        
+                    }
+                }
+            },
+            "Check messages": {
+                "active":true,
+                "rooms_affected": {
+                    "phone_unlocked":{
+                        "image":"phone_messages",
+                        "options": {
+                            "Return to main screen": {
+                                "active":true
+                            },
+                            "Check messages": {
+                                "active":false
+                            },
+                            "View gallery": {
+                                "active":false
+                            }
+                        }
+                    }
+                }
+            },
+            "View gallery": {
+                "active":true,
+                "rooms_affected": {
+                    "phone_unlocked":{
+                        "image":"phone_gallery",
+                        "options": {
+                            "Return to main screen": {
+                                "active":true
+                            },
+                            "Check messages": {
+                                "active":false
+                            },
+                            "View gallery": {
+                                "active":false
+                            }
+                        }
+                    },
+                    "aisle_2_east": {
+                        "click_option": {
+                            "active":true                       
+                        }
+                    }
+                }                
+            }
+        }
+    },
+    "battery_bucket": {
+        "image":"battery_bucket",
+        "directions": {
+            "south":"aisle_2_east"
+        },
+        "click_option": {
+            "active":true,
+            "area": [
+                [52,59],
+                [64,59],
+                [52,66],
+                [64,66]
+            ],            
+            "add_item":"screwdriver_head",
+            "rooms_affected": {
+                "battery_bucket": {
+                    "image":"battery_bucket_no_bit",
+                    "click_option": {
+                        "active":false
+                    }
+                }
+            }
+        },
+        "magnify":true      
+    },
+    "end":{
+        "name":"end",
+        "image":"exit_door_open"
+    }   
+
+}
+
