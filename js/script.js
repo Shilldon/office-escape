@@ -935,10 +935,14 @@ function implementOption(effects, caller) {
     /*if image to display is set then don't move room just display the image and update the options*/
     if(effects.image_to_display!=undefined) {
         if(effects.image_format!=undefined){
-            $(".display-panel img").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/rooms/"+effects.image_to_display+"."+effects.image_format);            
+            if(!$(".display-panel img").hasClass("briefcase-lock")) {
+                $(".display-panel img").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/rooms/"+effects.image_to_display+"."+effects.image_format);     
+            }       
         }
         else {
-            $(".display-panel img").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/rooms/"+effects.image_to_display+".jpg");
+            if(!$(".display-panel img").hasClass("briefcase-lock")) {            
+                $(".display-panel img").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/rooms/"+effects.image_to_display+".jpg");
+            }
         }
 
         currentRoom = $("body").attr("data");
