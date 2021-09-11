@@ -1330,10 +1330,10 @@
         },
         "code_panel": {
             "name": "pc-keycard",
-            "code":["1166734"],
+            "code":["1949","1166734"],
             "locked":true,
             "target":"pc-activate-keycard-activated",
-            "error": ["Card number not recognised"],
+            "error": ["Fob number not recognised","Card number not recognised"],
             "replace_item": ["key-card","activated-key-card"]
         }        
     },     
