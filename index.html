@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
-<body data="pc-activate-keycard">
+<body data="printer_log_in">
     <div class="clock d-flex justify-content-center align-items-center">
         <div class="timer hours-ten text-center"></div>
         <div class="timer hours-one text-center"></div>
@@ -98,8 +98,8 @@
         <div class="col-1 d-flex justify-content-center align-items-center inventory-move" data="right"><i class="fas fa-angle-right fa-5x"></i></div>              
     </div>
 
-    <div class="row">  
-        <div class="col-1 offset-1 offset-xl-2 move-button-corner d-flex justify-content-center align-items-center">
+    <div class="row ml-3">  
+        <div class="col-1  move-button-corner d-flex justify-content-center align-items-center">
             <div class="magnify d-flex justify-content-center align-items-center">
                 <span><i class="magnify-icon fas fa-search fa-3x"></i></span>
             </div>
@@ -111,12 +111,12 @@
             <i class="fas fa-angle-up fa-5x"></i>
         </div>
         <div class="col-1 move-button-corner  d-flex justify-content-center align-items-center">
-            <span><i class="fas fa-caret-square-down fa-3x toggle-options"></i></span>  
+           <!--<span><i class="fas fa-caret-square-right fa-3x toggle-options"></i></span>-->
         </div>        
-    </div>
+     </div>
 
-    <div class="row" >
-        <div id="west" class="col-1 offset-1 offset-xl-2 d-flex justify-content-center align-items-center move-button"><i class="fas fa-angle-left fa-5x"></i></div>
+    <div class="row ml-3" >
+        <div id="west" class="col-1 d-flex justify-content-center align-items-center move-button"><i class="fas fa-angle-left fa-5x"></i></div>
         <div class="col-8 col-xl-6 display-panel d-flex justify-content-center" style="pointer-events:none; position: relative">    
         
         <!--END SCREEN -->
@@ -230,7 +230,7 @@
             <!-- BRIEFCASE PANEL-->
             <div id="briefcase-lock" class="code-panel">
                 <input type="hidden" class="briefcase-both-locks" placeholder="000000">
-                <div class="briefcase left-lock code-panel" style="position: absolute; width: 20vw; height: 13.33vw; transform: translateX(-25vw)">
+                <div class="briefcase left-lock code-panel" style="position: absolute; width: 20vw; height: 13.33vw; transform: translateX(-24vw)">
                     
                     <img class="briefcase-lock img-fluid" style="position: absolute;" src="https://shilldon-escape.s3.eu-west-2.amazonaws.com/briefcase/left-lock-locked.png" alt="">
                     <img class="briefcase-lock img-fluid left-lock-L" data="0" src="https://shilldon-escape.s3.eu-west-2.amazonaws.com/briefcase/left-lock-L0.png" alt="">
@@ -238,7 +238,7 @@
                     <img class="briefcase-lock img-fluid left-lock-R" data="0" src="https://shilldon-escape.s3.eu-west-2.amazonaws.com/briefcase/left-lock-R0.png" alt="">                                                    
                            
                 </div>
-                <div class="briefcase right-lock code-panel" style="position: absolute; width: 20vw; height: 13.33vw;transform: translateX(5vw)">
+                <div class="briefcase right-lock code-panel" style="position: absolute; width: 20vw; height: 13.33vw;transform: translateX(4vw)">
                     <img class="briefcase-lock img-fluid" src="https://shilldon-escape.s3.eu-west-2.amazonaws.com/briefcase/right-lock-locked.png" alt="">
                     <img class="briefcase-lock img-fluid right-lock-L" style="position: absolute;"  data="0" src="https://shilldon-escape.s3.eu-west-2.amazonaws.com/briefcase/right-lock-L0.png" alt="">
                     <img class="briefcase-lock img-fluid right-lock-M" data="0" src="https://shilldon-escape.s3.eu-west-2.amazonaws.com/briefcase/right-lock-M0.png" alt="">
@@ -330,10 +330,70 @@
        
         <div id="east" class="col-1 d-flex justify-content-center align-items-center move-button"><i class="fas fa-angle-right fa-5x"></i></div>
 
+        <div class="col-2 col-xl-4 justify-content-center">
+
+                <div class="map-container mx-auto w-75 d-flex align-items-center">
+                    <div class="map mx-auto d-flex flex-wrap" style="width: 91%; height:84%;">
+                        <div class="cell d-flex align-items-center">
+                            <i class="aisle_1 far fa-arrow-alt-circle-left"></i>
+                        </div>
+                        <div class="cell d-flex align-items-center">
+                            <i class="aisle_2 far fa-arrow-alt-circle-left" ></i>
+                        </div>
+                        <div class="cell d-flex align-items-center">
+                            <i class="aisle_3 far fa-arrow-alt-circle-left"></i>
+                        </div>
+                        <div class="cell d-flex align-items-center">
+                            <i class="aisle_4 far fa-arrow-alt-circle-left"></i>
+                        </div>
+                        <div class="cell d-flex align-items-center">
+                            <i class="aisle_5 far fa-arrow-alt-circle-left" ></i>
+                        </div>        
+                        <div class="cell d-flex align-items-center cell-bottom-left">
+                            <i class="corridor_1 far fa-arrow-alt-circle-left "></i>
+                        </div>
+                        <div class="cell d-flex align-items-center">
+                            <i class="corridor_2 far fa-arrow-alt-circle-left" ></i>
+                        </div>
+                        <div class="cell d-flex align-items-center">
+                            <i class="corridor_3 far fa-arrow-alt-circle-left"></i>
+                        </div>
+                        <div class="cell d-flex align-items-center">
+                            <i class="corridor_4 far fa-arrow-alt-circle-left" ></i>
+                        </div>
+                        <div class="cell d-flex align-items-center">
+                            <i class="corridor_5 far fa-arrow-alt-circle-left" ></i>
+                        </div>        
+                    </div>
+  
+            </div>        
+
+            <div class="row mt-5" style="z-index:3">
+                <div class="col-12 d-flex justify-content-center">
+                    <h2 class="room-description text-center"></h2>
+                </div>
+            </div>            
+            
+            <!--options panel-->
+            <div class="row options-pane mt-5" style="z-index:3">
+                <div class="col-12 ">
+                    <div class='d-flex justify-content-center' draggable="false" style="user-select:none">
+                        <h2>What do you want to do?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row options-pane">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="options btn-group-vertical">
+        
+                    </div>
+                </div>
+            </div>            
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-1 offset-1 offset-xl-2 move-button-corner"></div>
+    <div class="row ml-3">
+        <div class="col-1 move-button-corner"></div>
         <div id="south" class="col-8 col-xl-6 d-flex justify-content-center align-items-center move-button">
             <i class="fas fa-angle-down fa-5x"></i>
         </div>
@@ -345,27 +405,7 @@
         <div class="magnified-image"></div> 
     </div>
     
-    <div class="row" style="z-index:3">
-        <div class="col-10 offset-1 d-flex justify-content-center">
-            <h2 class="room-description"></h2>
-        </div>
-    </div>
 
-    <!--options panel-->
-    <div class="row options-pane" style="z-index:3">
-        <div class="col-8 offset-2 ">
-            <div class='d-flex justify-content-center' draggable="false" style="user-select:none">
-                <h2>What do you want to do?</h2>
-            </div>
-        </div>
-    </div>
-    <div class="row options-pane">
-        <div class="col-8 offset-2 d-flex justify-content-center">
-            <div class="options btn-group-vertical">
-
-            </div>
-        </div>
-    </div>
 </div>
 
     <!-- Message Modal-->

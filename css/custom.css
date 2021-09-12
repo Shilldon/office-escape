@@ -9,6 +9,43 @@ body {
   src: url("../assets/fonts/BAHNSCHRIFT.TTF");
 }
 
+.map-container {
+  background-image: url("../assets/images/map.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 4px solid #991f6b;
+  height: 30%;
+}
+
+.map .row {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.map .col-2 {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.map .cell {
+  position: relative;
+  color: white;
+  width: 20%;
+  height: 50%;
+}
+
+.map .cell i {
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  left: 4%;
+  font-size: 1.25rem;
+}
+
+.map .cell-bottom-left i {
+  left: 30% !important;
+}
+
 .pc-search {
   font-size: 0.75rem;
   padding: 2px;
@@ -277,15 +314,8 @@ h2 {
   position: absolute;
 }
 
-.briefcase-arrow {
-  opacity: 0.5;
-  -webkit-transition-duration: 0.25s;
-          transition-duration: 0.25s;
-}
-
-.briefcase-arrow:hover {
-  color: #991f6b;
-  opacity: 1;
+.briefcase-lock img {
+  max-width: 75%;
 }
 
 /*
@@ -517,16 +547,16 @@ h2 {
   pointer-events: all;
 }
 
-@media (min-width: 1920px) {
+@media screen and (min-width: 1920px) {
   .phone-passcode-panel input {
     font-size: 2.75rem;
   }
   .printer-logon-button {
     height: 5%;
-    font-size: 1.45rem;
+    font-size: 1.25rem;
   }
   .printer-logon-panel input {
-    font-size: 1.45rem;
+    font-size: 1.25rem;
   }
   .btn {
     font-size: 1.75rem;
@@ -537,6 +567,13 @@ h2 {
   .pc-search {
     font-size: 1rem;
     padding: 5px;
+  }
+  .cell i {
+    font-size: 1.75rem !important;
+    left: 7% !important;
+  }
+  .cell-bottom-left i {
+    left: 30% !important;
   }
 }
 /*# sourceMappingURL=custom.css.map */

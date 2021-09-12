@@ -8,7 +8,42 @@ body {
     font-family: Bahnschrift;
     src: url("../assets/fonts/BAHNSCHRIFT.TTF");
   }
+.map-container {
+    background-image: url("../assets/images/map.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 4px solid #991f6b;
+    height:30%;
+}
+  .map {
 
+    .row {
+        padding:0px !important;
+        margin:0px !important;
+    }
+    .col-2 {
+        padding:0px !important;
+        margin:0px !important;
+    }      
+    .cell {
+        position: relative;
+        color: white;
+        width: 20%;
+        height:50%;
+        i {
+            padding:0px; 
+            margin:0px;
+            position: absolute;
+            left:4%;
+            font-size: 1.25rem;
+        }
+    }
+    .cell-bottom-left {
+        i {
+            left:30% !important;   
+        }
+    }    
+}
 .pc-search {
     font-size: 0.75rem;
     padding: 2px;
@@ -254,17 +289,12 @@ h2 {
 
 .briefcase-lock {
     position: absolute;
+    img {
+        max-width:75%;
+    }
 }
 
-.briefcase-arrow {
-    opacity: 0.5;
-    transition-duration: 0.25s;
-}
 
-.briefcase-arrow:hover {
-    color: #991f6b; 
-    opacity: 1;
-}
 /*
 .excel-passcode-panel {
     left: 23.525%;
@@ -489,7 +519,8 @@ h2 {
     pointer-events:all;
 }
 
-@media(min-width: 1920px) {
+@media screen 
+    and (min-width: 1920px) {
     .phone-passcode-panel {
         input {
             font-size: 2.75rem;
@@ -497,11 +528,11 @@ h2 {
     }
     .printer-logon-button {
         height: 5%;
-        font-size: 1.45rem;
+        font-size: 1.25rem;
     }    
     .printer-logon-panel {
         input {
-            font-size: 1.45rem;
+            font-size: 1.25rem;
         }
         
     }
@@ -515,4 +546,17 @@ h2 {
         font-size: 1rem;
         padding: 5px;
     }
+
+    .cell {
+        i {
+            font-size: 1.75rem !important;
+            left:7% !important;
+        }
+    }    
+    .cell-bottom-left {
+        i {
+            left:30% !important;   
+        }
+    }
+
 }

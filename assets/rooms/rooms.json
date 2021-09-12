@@ -635,7 +635,8 @@
                     "image":"aisle_4_east_no_paper"
                 }
             }
-        }        
+        },
+        "magnify":true        
     },   
     "aisle_4_south": {
         "image":"aisle_4_south",
@@ -745,7 +746,8 @@
                     }
                 }
             }
-        }
+        },
+        "magnify":true
     },   
     "target_board":{
         "image":"ball_target",
@@ -836,7 +838,8 @@
         },
         "directions": {
             "west": "corridor_3_east",
-            "east": "corridor_3_west"
+            "east": "corridor_3_west",
+            "south":"corridor_3_south"
         }
     },         
     "wall_clock":{
@@ -882,6 +885,7 @@
     },
     "briefcase": {
         "image":"briefcase",
+        "description":"Click above and below the dial numbers to change the combination.",
         "code_panel": {
             "name": "briefcase-lock",
             "code":["492935"],
@@ -1186,9 +1190,11 @@
     },
     "printer_log_in": {
         "image":"printer_control_log_in",
+        "description":"Click next to the options to enter log in details.",
         "code_panel": {
             "name": "printer-logon-panel",
-            "code":["61048","Dave Bowman","2001","594A21"],
+            "code":["61048","DAVE BOWMAN","2001","594A21"],
+            "not_case_sensitive":true,
             "locked":true,
             "target":"accessed-printer",
             "error": ["Model not recognised","User not recognised","User ID not recognised","Wrong password"],
@@ -1487,7 +1493,7 @@
     },
     "pedestal_light": {
         "image": "side_desk_light_key",
-        "description": "You can see a key card stuck between the pedestal and cabinet.",
+        "description": "You can see a key card between the pedestal and cabinet but it is just out of reach.",
         "options": {
             "Use ruler to get keycard": {
                 "active": false,
@@ -1582,6 +1588,7 @@
     },
     "phone": {
         "image": "phone",
+        "description":"Click on the keypad numbers to enter the passcode.",
         "stay_put":true,
         "code_panel": {
             "name": "phone-passcode-panel",

@@ -3,17 +3,29 @@ var itemData;
 var inventory;
 var escapeTimer;
 
+$(document).keydown(function(e) {
+    console.log(e.which) //up 38 right 39 down 40 
+    var arrow = e.which;
+    var direction;
+    switch (arrow) {
+        case 38: direction = "north"; break;
+        case 39: direction = "east"; break;
+        case 40: direction = "south"; break;
+        case 37: direction = "west"; break;        
+    }
+    console.log(direction)
+    if($("#"+direction).hasClass("active")) {
+
+        hideMagnifier();
+        var currentRoom = $("body").attr("data");
+        var targetRoom = roomData[currentRoom].directions[direction];
+    
+        if(targetRoom!=undefined) 
+            moveToTarget(targetRoom);
+    }
+})
 
 $(document).mousemove(function(e) {
-    /*
-    var x = e.pageX - $(".display-panel").offset().left;
-    var y = e.pageY - $(".display-panel").offset().top;
-
-    var displayWidth = $(".display-panel").width();
-    var displayHeight = $(".display-panel").height();
-
-    var xPercent = x/displayWidth*100;
-    var yPercent = y/displayHeight*100;*/
     var currentRoom = $("body").attr("data");
     if(roomData[currentRoom].hasOwnProperty("click_option")) {
         if(roomData[currentRoom].click_option.active == true) {
@@ -37,7 +49,6 @@ $(document).mousemove(function(e) {
             $('body').css('cursor', 'default');
         }        
     }
-   //console.log("xPercent "+xPercent+" yPercent "+yPercent)
 });
 
 $(document).ready(function() {
@@ -173,14 +184,16 @@ $(".display-panel").click(function(e){
 })
 
 $(".move-button").click(function() {
-    hideMagnifier();
-    var currentRoom = $("body").attr("data");
-    var direction = $(this).attr("id");
-    var targetRoom = roomData[currentRoom].directions[direction];
-
-    if(targetRoom!=undefined) 
-        moveToTarget(targetRoom);
+    if($(this).hasClass("active")) {
+        hideMagnifier();
+        var currentRoom = $("body").attr("data");
+        var direction = $(this).attr("id");
+        var targetRoom = roomData[currentRoom].directions[direction];
     
+        if(targetRoom!=undefined) 
+            moveToTarget(targetRoom);
+            
+    }    
 })
 
 $("body").on("click", ".option-button", function() {
@@ -208,8 +221,10 @@ $(".reload").on("click", function() {
     location.reload();
 })
 
+
+
+
 $(".code-panel input").keypress(function(e) {
-    console.log("tried")
     if(!$(this).hasClass("excel-password")) {
         if(e.which == 13) {
             tryCode($(this).attr("data-panel-id"));
@@ -345,12 +360,13 @@ $(".close-magnify").on("click", function() {
 $(".close-magnify-item").on("click", function() {
     hideMagnifier();
 })
-
+/*
 $(".toggle-options").click(function() {
     $([document.documentElement, document.body]).animate({
         scrollTop: $(".options-pane").offset().top
     }, 1000);
 });
+*/
 
 $(".examine-item").click(function() {
     if($(this).siblings().hasClass("filled")) {
@@ -443,7 +459,7 @@ $(".briefcase").click(function(e){
     var xPercent = x/lockWidth*100;
     var yPercent = y/lockHeight*100;
 
-    if(yPercent < 50) {
+    if(parseFloat(yPercent) < 27.0) {
         if(xPercent > lockLocations[lock][0][0] && xPercent <lockLocations[lock][0][1]) {
             currentNumber = $("."+lock+"-L").attr("data");
             changeBriefcaseDial(lock,"L","up",currentNumber);
@@ -457,7 +473,7 @@ $(".briefcase").click(function(e){
             changeBriefcaseDial(lock,"R","up",currentNumber);
         }     
     }
-    else if(yPercent > 50) {
+    else if(parseFloat(yPercent) > 37.0) {
         if(xPercent > lockLocations[lock][0][0] && xPercent <lockLocations[lock][0][1]) {
             currentNumber = $("."+lock+"-L").attr("data");
             changeBriefcaseDial(lock,"L","down",currentNumber);
@@ -495,7 +511,7 @@ function tryLock(lock,combination) {
     {
         setTimeout(function() {
             tryCode("briefcase-both-locks");
-        },1500);    
+        },1000);    
     }
 }
 
@@ -522,7 +538,11 @@ function tryCode(codePanel) {
     $.each(codePanels, function(index) {
         console.log(codePanel)
         console.log("inex "+index)
+        
         guess = $("."+codePanel).eq(index).val();
+        if(roomData[currentRoom].code_panel.hasOwnProperty("not_case_sensitive")){
+            guess = guess.toUpperCase();
+        }
         //var panel = codePanel;
         
         if(pass==false) {
@@ -628,11 +648,34 @@ function moveToTarget(targetRoom) {
 
     $("body").attr("data",targetRoom);    
     $(".options-pane").css("visibility","hidden");
-    $(".toggle-options").hide();
-    $(".toggle-options").parent().parent().removeClass("active");
+    //$(".toggle-options").hide();
+    //$(".toggle-options").parent().parent().removeClass("active");
     //var data = JSON.parse(localStorage.getItem("roomData"));
     var targetRoomData = roomData[targetRoom];
+    updateMap(targetRoom);
     showRoom(targetRoomData);
+}
+
+function updateMap(targetRoom) {
+    var locationType = targetRoom.split("_")[0];
+    var locationNumber = targetRoom.split("_")[1];
+    var locationDirection = targetRoom.split("_")[2];
+    
+    if($("."+locationType+"_"+locationNumber).length>0) {
+        var cell = $("."+locationType+"_"+locationNumber); 
+        $(".cell i").hide();
+        cell.show();       
+        var arrowClass;
+        switch(locationDirection) {
+            case "west": arrowClass="fa-arrow-alt-circle-left"; break;
+            case "east": arrowClass="fa-arrow-alt-circle-right"; break;
+            case "north": arrowClass="fa-arrow-alt-circle-up"; break;
+            case "south": arrowClass="fa-arrow-alt-circle-down"; break;
+        } 
+        cell.removeClass("fa-arrow-alt-circle-left fa-arrow-alt-circle-up fa-arrow-alt-circle-right fa-arrow-alt-circle-down");
+        cell.addClass(arrowClass);
+    }
+    console.log(locationType+" "+locationNumber+" "+locationDirection)
 }
 
 function showRoom(targetRoomData) {
@@ -712,8 +755,8 @@ function showRoom(targetRoomData) {
             }
         });
         if(toggleOptions == true) {
-            $(".toggle-options").show();
-            $(".toggle-options").parent().parent().addClass("active");
+            //$(".toggle-options").show();
+            //$(".toggle-options").parent().parent().addClass("active");
         }
         updateOptions(options);
     }
@@ -798,14 +841,14 @@ function updateOptions(options) {
     })
     if(showOptionsPanel == true) {
         $(".options-pane").css("visibility","visible");
-        $(".toggle-options").show();
-        $(".toggle-options").parent().parent().addClass("active");
+        //$(".toggle-options").show();
+        //$(".toggle-options").parent().parent().addClass("active");
         $(".options").html(optionsTable);    
     }
     else {
         $(".options-pane").css("visibility","hidden");
-        $(".toggle-options").hide();
-        $(".toggle-options").parent().parent().removeClass("active");        
+        //$(".toggle-options").hide();
+        //$(".toggle-options").parent().parent().removeClass("active");        
     }
     
 }
