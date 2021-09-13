@@ -44,9 +44,19 @@ body {
         }
     }    
 }
+
+.pc-search-panel {
+    visibility: visible;
+    position: absolute;
+    left: 73.75%;
+    width: 17.25%;
+    top: 24.65%;
+}
+
 .pc-search {
     font-size: 0.75rem;
     padding: 2px;
+    width:100%;
     border: 1px solid grey;
 }
 .pc-search:focus {
@@ -140,14 +150,6 @@ h2 {
     font-size: 1.5rem;
 }
 
-.pc-search-panel {
-    visibility: visible;
-    position: absolute;
-    left: 73.75%;
-    width: 21.25%;
-    top: 24.65%;
-}
-
 .pc-keycard-link {
     position: absolute;
     left: 22.2%;
@@ -163,6 +165,16 @@ h2 {
     position: absolute;
     width: 32%;
     top: 55%;
+    font-size:0.85em;
+    input {
+        padding-left: 1em;
+        padding-top:0.5em;
+        padding-bottom:0.5em;
+        font-size: 1em;
+    }
+    button {
+        font-size: 0.85em; 
+    }
 }
 
 .pc-logon-button {
@@ -295,86 +307,57 @@ h2 {
 }
 
 
-/*
 .excel-passcode-panel {
-    left: 23.525%;
-    top: 29.67%;
-    height: 2.84%;
-    width: 8.727%;
-    border: 1px solid red;
-    position: absolute;
-    z-index:10;
-    input {
-        max-width: 100%;
-        max-height:100%;
-        padding:0;
-        text-align:right;
-        border:none;
-        position: absolute;
-        font-family: Arial;
-        font-size:90%;
-    }
-}*/
-.excel-passcode-panel {
-    left: 3.425%;
-    top: 15.75%;
+    left: 3.925%;
+    top: 15.95%;
     height: 28.84%;
     width: 62.027%;
     position: absolute;
     z-index: 10;
-/*
-    input {
-        max-width: 100%;
-        max-height:100%;
-        padding:0;
-        text-align:right;
-        border:none;
-        position: absolute;
-        font-family: Arial;
-        border: red solid 1px;
-    }*/
+    font-size:0.75em;
+    color: black;
+
 }
 
-.excel-table {
-    color: black;
-    border-collapse: collapse;
-    position: relative;
+.excel-table-div {
+    font-size:0.75em;
     width:100%;
-    height:100%;
-    table-layout:fixed;
+}
+
+.excel-row {
+    padding:0;
+    margin:0;
+    width:100%;
+    height: 12.5%;
+}
+
+.excel-cell {
     font-weight:600;
-    font-family: Arial;    
-    tr {
+    font-family: Arial;      
+    padding-right:3px;
+    margin:0;
+    width:20%;
+    input {
+        font-weight:600;
+        font-family: Arial;  
+        line-height: 100%;
+        text-align: right;
         padding:0;
-        font-size: 75%;
-    }
-    td {
-        text-align:right;
-        input {
-            font-weight:600;
-            font-family: Arial;  
-            line-height: 100%;
-            text-align: right;
-            padding:0;
-            margin:0;
-            border:none;
-            font-size: inherit;
-            width: 100%;
-            max-height:100%;
-            background-color: transparent;
-        }
-        input:focus {
-            outline:none;
-        }
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }        
-    }
-    td:focus {
+        margin:0;
+        border:none;
+        font-size: inherit;
+        width: 100%;
+        max-height:100%;
+        background-color: transparent;
+    }    
+    input:focus {
         outline:none;
     }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }        
 }
 
 //inventory
@@ -557,6 +540,17 @@ h2 {
         i {
             left:30% !important;   
         }
+    }
+
+    .excel-passcode-panel {
+
+        font-size:0.9em;
+    
+    }    
+
+    .pc-logon-panel {
+
+        font-size:1em;
     }
 
 }

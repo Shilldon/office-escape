@@ -1265,7 +1265,7 @@
     },
     "computer": {
         "image": "pc",
-        "description": "The computer is password protected.",
+        "description": "The computer is password protected. Click on the input boxes to type in the username and password.",
         "options": {},
         "directions": {
             "south": "aisle_4_west"
@@ -1298,7 +1298,7 @@
             "locked":true,
             "target":"pc-search",
             "temporary_target":true,
-            "error": [""]
+            "error": ["Person not found"]
         }
     },
     "pc-search": {
@@ -1453,8 +1453,7 @@
                     }
                 }
             }                   
-        },  
-        "magnify":true
+        }
     },
     "pc-excel": {
         "image": "pc_excel",

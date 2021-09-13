@@ -5,6 +5,9 @@ var escapeTimer;
 
 $(document).keydown(function(e) {
     console.log(e.which) //up 38 right 39 down 40 
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        e.view.event.preventDefault();
+    }  
     var arrow = e.which;
     var direction;
     switch (arrow) {

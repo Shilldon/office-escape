@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
-<body data="printer_log_in">
+<body data="pc-intranet">
     <div class="clock d-flex justify-content-center align-items-center">
         <div class="timer hours-ten text-center"></div>
         <div class="timer hours-one text-center"></div>
@@ -138,67 +138,65 @@
 
         <!--EXCEL PASSWORD PANEL-->
         <div class="excel-passcode-panel code-panel">
-            <table class="excel-table">
-                <tr>
-                    <td>Department</td>
-                    <td>Budget</td>
-                    <td>Actual</td>
-                    <td>WIP</td>
-                    <td>Projected</td>
-                </tr>
-                <tr>
-                    <td>TTE</td>
-                    <td>750</td>
-                    <td>757</td>
-                    <td>150</td>
-                    <td>907</td>
-                </tr>
-                <tr>
-                    <td>PI</td>                    
-                    <td>1000</td>
-                    <td>877</td>
-                    <td>573</td>
-                    <td>1450</td>
-                </tr>
-                <tr>
-                    <td>COP</td>                    
-                    <td>950</td>
-                    <td>621</td>
-                    <td>514</td>
-                    <td>1135</td>
-                </tr>
-                <tr>
-                    <td>RESI</td>                    
-                    <td>950</td>
-                    <td>832</td>
-                    <td>455</td>
-                    <td>1287</td>
-                </tr>
-                <tr>
-                    <td>WTED</td>                    
-                    <td>900</td>
-                    <td>903</td>
-                    <td>381</td>
-                    <td>1284</td>
-                </tr>
-                <tr>
-                    <td>FAMILY</td>                    
-                    <td>900</td>
-                    <td><input type="number"  tabindex = "1" class="excel-password" placeholder="" ></td>
-                    <td tabindex="2">234</td>
-                    <td class="excel-family-total"></td>
-                </tr>
-                <tr>
-                    <td>TOTAL</td>                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="excel-total">£   6063</td>
-                </tr>                
-            </table>
-            
+            <div class="excel-row d-flex">
+                <div class="excel-cell d-flex align-items-center justify-content-end">Department</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">Budget</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">Actual</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">WIP</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">Projected</div>
+            </div>
+            <div class="excel-row d-flex">
+                <div class="excel-cell d-flex align-items-center justify-content-end">TTE</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">750</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">757</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">150</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">907</div>
+            </div>  
+            <div class="excel-row d-flex">
+                <div class="excel-cell d-flex align-items-center justify-content-end">PI</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">1000</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">877</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">573</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">1450</div>
+            </div>           
+            <div class="excel-row d-flex">
+                <div class="excel-cell d-flex align-items-center justify-content-end">COP</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">950</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">621</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">514</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">1135</div>
+            </div>           
+            <div class="excel-row d-flex">
+                <div class="excel-cell d-flex align-items-center justify-content-end">RESI</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">950</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">932</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">455</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">1287</div>
+            </div>           
+            <div class="excel-row d-flex">
+                <div class="excel-cell d-flex align-items-center justify-content-end">WTED</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">900</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">903</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">381</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">1284</div>
+            </div>           
+            <div class="excel-row d-flex">
+                <div class="excel-cell d-flex align-items-center justify-content-end">FAMILY</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">900</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end"><input type="number"  tabindex = "1" class="excel-password" placeholder="" ></div>
+                <div class="excel-cell d-flex align-items-center justify-content-end">234</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end excel-family-total"></div>
+            </div>           
+            <div class="excel-row d-flex">
+                <div class="excel-cell d-flex align-items-center justify-content-end">TOTAL</div>
+                <div class="excel-cell d-flex align-items-center justify-content-end"></div>
+                <div class="excel-cell d-flex align-items-center justify-content-end"></div>
+                <div class="excel-cell d-flex align-items-center justify-content-end"></div>
+                <div class="excel-cell d-flex align-items-center justify-content-end excel-total">£ 6063</div>
+            </div>                       
         </div>
             <!-- PHONE PASSWORD PANEL-->
+        
             <div class="phone-passcode-panel code-panel">
                 <div class="row w-100 h-25 m-0 pt-0">
                     <div class="col-12">
@@ -261,7 +259,7 @@
             
                 <div class="d-flex flex-column mx-auto mt-4"  style="color: white; ">   
                     <span class="mx-auto mb-1">Sign in to: IM</span>
-                    <span  class="mx-auto mb-3">How do I sign in to another domain?</span>
+                    <span  class="mx-auto mb-1 text-center">How do I sign in to another domain?</span>
                     <span  class="mx-auto">Sign-in options</span>    
                 </div>
             </div>
