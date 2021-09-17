@@ -634,7 +634,7 @@
                 "items_affected": {
                     "calendar": {
                         "change_image":"calendar_15",
-                        "description": "Thursday 15th July - 'IT Bowman coming to fix printer'",
+                        "description": "Thursday 15th July - 'IT: Bowman coming to fix printer'",
                         "options": {
                             "Go to Tuesday": {
                                 "active":false

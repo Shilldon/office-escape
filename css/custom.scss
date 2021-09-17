@@ -8,6 +8,27 @@ body {
     font-family: Bahnschrift;
     src: url("../assets/fonts/BAHNSCHRIFT.TTF");
   }
+
+.btn {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.btn:focus {
+    outline:none !important;
+    box-shadow:none !important;
+    background-color:#991f6b;
+}
+
+.btn:disabled {
+    background-color: grey;
+}
+
+.btn:disabled:hover {
+    background-color: grey;
+}
+
 .map-container {
     background-image: url("https://shilldon-escape.s3.eu-west-2.amazonaws.com/misc/map.png");
     background-repeat: no-repeat;

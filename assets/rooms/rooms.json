@@ -84,6 +84,12 @@
             "east": "corridor_2_east",
             "south": "corridor_2_south",
             "west": "corridor_2_west"
+        },
+        "hint_data": {
+            "hint_title":"Printer Clues",
+            "hints":["Look at the computer","Run around in circles","","Top left of the screen"],
+            "time_penalties":[1,2,0,4],
+            "hints_used":[false,false,false,false]
         }
     },
     "corridor_2_east": {
@@ -166,7 +172,7 @@
                 "active":true,
                 "go_to":"seating_plan"
             }            
-        }
+        }         
     },     
     "corridor_3_west": {
         "image": "corridor_3_west",
@@ -277,7 +283,13 @@
                                 "selected_item":""                           
                             }
     
-                        }
+                        },
+                        "hint_data": {      
+                            "hint_title":"No hints available",
+                            "hints":["","","",""],
+                            "time_penalties":[0,0,0,0],
+                            "hints_used":[false,false,false,false]                                         
+                        }   
                     },
                     "aisle_5_south":{
                         "image":"aisle_5_south_stool"
@@ -305,7 +317,13 @@
                 }
             }
         },
-        "magnify": true
+        "magnify": true,
+        "hint_data": {      
+            "hint_title":"East end of office.",
+            "hints":["How are you going to get up there?","Find something to stand on.","Use the stepstool from the tall cupboard opposite the stationery cupboard. ","Key - on top of the cupboard to the right."],
+            "time_penalties":[2,4,7,5],
+            "hints_used":[false,false,false,false]                                         
+        }           
     },          
     "corridor_5_south": {
         "image": "corridor_5_south",
@@ -381,7 +399,13 @@
         "directions":{
             "west":"aisle_1_north",
             "east":"aisle_1_south"
-        }
+        },
+        "hint_data": {
+            "hint_title":"Drawer Clues",
+            "hints":["Try on top of the cupboards.","The keys is down the other end of the office.","They key is on top of the cupboard next to the printer at the other end of the office",""],
+            "time_penalties":[1,3,5],
+            "hints_used":[false,false,false]
+        }         
     },        
     "aisle_1_south": {
         "image":"aisle_1_south",
@@ -466,10 +490,22 @@
                     "image": "aisle_2_west_no_calendar",
                     "click_option": {
                         "active":false
+                    },
+                    "hint_data": {
+                        "hint_title":"No hints available.",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]
                     }
                 }
             }
         },
+        "hint_data": {
+            "hint_title":"Desks 3 & 4 Clues",
+            "hints":["","","","Desk calendar on the left of desk 4."],
+            "time_penalties":[0,0,0,3],
+            "hints_used":[false,false,false,false]
+        },          
         "magnify":true
     },         
     "aisle_3_north": {
@@ -504,6 +540,12 @@
                     "image_suffix": {
                         "images":["_post_it"],
                         "active":[false]
+                    },
+                    "hint_data": {
+                        "hint_title":"No hints available",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]
                     }
                 },
                 "target_board": {
@@ -524,7 +566,13 @@
                     }
                 }                
             }
-        }
+        },
+        "hint_data": {
+            "hint_title":"Target board",
+            "hints":["","","","The post-it note on the target board."],
+            "time_penalties":[0,0,0,2],
+            "hints_used":[false,false,false,false]
+        }  
     },
     "aisle_3_east": {
         "image":"aisle_3_east",
@@ -549,10 +597,22 @@
                     "click_option": {
                         "active":false
                     },
-                    "image":"aisle_3_east_no_pencil"
+                    "image":"aisle_3_east_no_pencil",
+                    "hint_data": {
+                        "hint_title":"No hints available",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]
+                    } 
                 }
             }
-        }        
+        },
+        "hint_data": {
+            "hint_title":"Desks 9 & 10",
+            "hints":["","","","The pencil on desk 10 below the monitor."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]
+        }         
     },    
     "aisle_3_south": {
         "image":"aisle_3_south",
@@ -587,13 +647,25 @@
                     "click_option": {
                         "active":"false"                        
                     },
-                    "image":"aisle_3_west_no_stamp"
+                    "image":"aisle_3_west_no_stamp",
+                    "hint_data": {
+                        "hint_title":"No hints available",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]
+                    }  
                 },
                 "corridor_3_north": {
                     "image":"corridor_3_north_no_stamp"
                 }                
             }
-        }
+        },
+        "hint_data": {
+            "hint_title":"Desks 7 & 8",
+            "hints":["","","","The certification stamp. Middle left of desk 8."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]
+        }  
     },         
     "aisle_4_north": {
         "image":"aisle_4_north",
@@ -632,10 +704,22 @@
                     "click_option": {
                         "active":"false"                        
                     },
-                    "image":"aisle_4_east_no_paper"
+                    "image":"aisle_4_east_no_paper",
+                    "hint_data": {
+                        "hint_title":"No hints available.",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]
+                    }
                 }
             }
         },
+        "hint_data": {
+            "hint_title":"Desk 13 & 14 Clues",
+            "hints":["","","","Paper on the right of desk 14."],
+            "time_penalties":[0,0,0,2],
+            "hints_used":[false,false,false,false]
+        },           
         "magnify":true        
     },   
     "aisle_4_south": {
@@ -670,9 +754,21 @@
                     "click_option": {
                         "active":false
                     }
-                }
+                },
+                "hint_data": {
+                    "hint_title":"No hints available.",
+                    "hints":["","","",""],
+                    "time_penalties":[0,0,0,0],
+                    "hints_used":[false,false,false,false]
+                }                   
             }
         },        
+        "hint_data": {
+            "hint_title":"Desk 12 Clues",
+            "hints":["","","","Business card on left of the desk."],
+            "time_penalties":[0,0,0,3],
+            "hints_used":[false,false,false,false]
+        },         
         "options": {
             "Use PC": {
                 "active":true,
@@ -743,16 +839,27 @@
                     "image":"aisle_5_west_no_phone",
                     "click_option":{
                         "active":false
-                    }
+                    },
+                    "hint_data": {      
+                        "hint_title":"No hints available.",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]                                         
+                    }                       
                 }
             }
         },
-        "magnify":true
+        "magnify":true,
+        "hint_data": {      
+            "hint_title":"Desks 15 & 16",
+            "hints":["","","","Mobile phone in the middle of the desk."],
+            "time_penalties":[0,0,0,2],
+            "hints_used":[false,false,false,false]                                         
+        }        
     },   
     "target_board":{
         "image":"ball_target",
         "image_format":"png",
-
         "image_suffix": {
             "images":["_post_it"],
             "active":[true]
@@ -782,6 +889,12 @@
                         "image_suffix": {
                             "images":["_post_it"],
                             "active":["false"]
+                        },
+                        "hint_data": {
+                            "hint_title":"No hints available",
+                            "hints":["","","",""],
+                            "time_penalties":[0,0,0,0],
+                            "hints_used":[false,false,false,false]
                         }
                     },
                     "corridor_3_north": {
@@ -805,7 +918,13 @@
                             }
                         },
                         "image_format":"jpg",
-                        "image":"ball_target_open"
+                        "image":"ball_target_open",
+                        "hint_data": {      
+                            "hint_title":"No hints available",
+                            "hints":["","","",""],
+                            "time_penalties":[0,0,0,0],
+                            "hints_used":[false,false,false,false]                                         
+                        }                        
                     },
                     "aisle_4_west": {
                         "click_option": {
@@ -814,7 +933,13 @@
                     }
                 }
             }
-        }
+        },
+        "hint_data": {
+            "hint_title":"Target board",
+            "hints":["There is something else in the office related to England rugby, can you find it?","Check out the logo on the business card.","You need to open the holes in order. Start bottom left and head left to right then up opening holes: 25, 50, 25, 25, 50, 100.",""],
+            "time_penalties":[2,5,10,0],
+            "hints_used":[false,false,false,false]
+        }  
     },
     "open_cupboard": {
         "image":"cupboard_open_stool",
@@ -836,6 +961,12 @@
                 }
             }                                   
         },
+        "hint_data": {      
+            "hint_title":"Cupboard",
+            "hints":["","","","Stepstool in the middle of the cupboard."],
+            "time_penalties":[0,0,0,1],
+            "hints_used":[false,false,false,false]                                         
+        },          
         "directions": {
             "west": "corridor_3_east",
             "east": "corridor_3_west",
@@ -894,7 +1025,13 @@
         },        
         "directions": {
             "south":"aisle_5_east"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Briefcase",
+            "hints":["Have you got into the laptop?","Look at the letter of wishes and desk reservations.","Left: 492 (from the chattels in the letter of wishes) Right: 935 (from the desk numbers of the fee earners mentioned in the letter of wishes)",""],
+            "time_penalties":[2,6,12,0],
+            "hints_used":[false,false,false,false]                                         
+        }           
     },
     "briefcase_open": {
         "image":"briefcase_open_ruler",        
@@ -951,6 +1088,12 @@
                                 "active":true
                             }
                         }     
+                    },
+                    "hint_data": {      
+                        "hint_title":"No hints available",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]                                         
                     }
                 }
             },
@@ -958,7 +1101,13 @@
                 "active":true,
                 "go_to":"post_tray"
             }
-        }
+        },
+        "hint_data": {
+            "hint_title":"Stationery cupboard",
+            "hints":["There is a screwdriver somewhere in the office.","Try looking on the printer.","You need the screwdriver from the printer and the screwdriver bit which is hidden somewhere else. The mobile phone can help you.",""],
+            "time_penalties":[1,3,7,0],
+            "hints_used":[false,false,false,false]
+        }  
     },  
     "stationery_cupboard_open":{
         "image":"stationery_cupboard_open",
@@ -980,7 +1129,13 @@
                     "click_option": {
                         "active":false
                     },
-                    "image": "stationery_cupboard_open_no_knight"
+                    "image": "stationery_cupboard_open_no_knight",
+                    "hint_data": {      
+                        "hint_title":"No hints available",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]                                         
+                    }
                 }
             }
         },
@@ -988,7 +1143,13 @@
             "east":"corridor_2_east",
             "west":"corridor_3_west"
         },
-        "magnify":true
+        "magnify":true,
+        "hint_data": {
+            "hint_title":"Stationery cupboard",
+            "hints":["","","","Something is out of place at the bottom right of the cupboard."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]
+        }    
     },
     "puzzle_box": {
         "image":"puzzle_box",
@@ -1002,7 +1163,13 @@
         },
         "directions": {
             "south":"back"
-        }             
+        },
+        "hint_data": {
+            "hint_title":"Puzzlebox Clues",
+            "hints":["You need a plan.","The answer is plastered all over the office.","Order of blocks, left to right: Down, up, up, down, up, down, up, down - from the Covid seating plan",""],
+            "time_penalties":[2,5,10,0],
+            "hints_used":[false,false,false,false]
+        }                       
     },
     "post_tray":{
         "image":"post_tray_parcel",
@@ -1144,7 +1311,13 @@
                     "click_option": {
                         "active":false
                     },
-                    "image": "printer_no_screwdriver"
+                    "image": "printer_no_screwdriver",
+                    "hint_data": {
+                        "hint_title":"No hints available.",
+                        "hints":["","","",""],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]
+                    }                        
                 },
                 "corridor_1_west": {
                     "image":"corridor_1_west_no_screwdriver"
@@ -1174,7 +1347,13 @@
                 }
             }
         },
-        "magnify":true          
+        "magnify":true,
+        "hint_data": {
+            "hint_title":"Printer Clues",
+            "hints":["","","","Screwdriver on the left of the printer."],
+            "time_penalties":[0,0,0,2],
+            "hints_used":[false,false,false,false]
+        }      
     },
     "printer_control": {
         "image":"printer_control_panel",
@@ -1202,7 +1381,13 @@
         },
         "directions":{
             "south":"printer"
-        }                
+        },
+        "hint_data": {
+            "hint_title":"Printer Log In Clues",
+            "hints":["Where might the model number be? Who is coming to fix the printer? Search for the User ID. You need make a 'note' of the password.","Model number - check the printer. User name/ID - the calendar and intranet might help. Password - try the desk drawer.","Model - 61048 (it's on the front of the printer). User name - Dave Bowman (Bowman from the calendar, then search the intranet). User ID - 2001 (from the intranet search). Password - 594A21 (written down in the notebook).",""],
+            "time_penalties":[5,10,15,2],
+            "hints_used":[false,false,false,false]
+        }                  
     },
     "accessed-printer": {
         "image":"printer_control_panel_print",
@@ -1277,7 +1462,13 @@
             "target":"accessed-pc",
             "error": ["","Wrong password"],
             "remove_item":["stamp"]
-        }
+        },
+        "hint_data": {
+            "hint_title":"Computer Clues",
+            "hints":["The mobile phone can help you with the password.","Who's SRA number is it?","User initials - GM (GM has reserved the desk that the certification stamp is on). Password - 207819 (SRA number from GM's certification stamp.","Paper on the right of desk 14."],
+            "time_penalties":[2,4,15,2],
+            "hints_used":[false,false,false,false]
+        }         
     },
     "pc-intranet": {
         "image": "pc_intranet",
@@ -1341,18 +1532,42 @@
             "target":"pc-activate-keycard-activated",
             "error": ["Fob number not recognised","Card number not recognised"],
             "replace_item": ["key-card","activated-key-card"]
-        }        
+        },
+        "hint_title":"Keycard activation clues.",
+        "hints":["What was the order of the printing? What time is it? Didn't the family team do well?","You need the printing (in the right order) the clock and the Excel spreadsheet.","1166734 (116: Numbers from the clock 58 x 2 = 116 and 6734: from the total billing on the excel spreadsheet)",""],
+        "time_penalties":[5,10,15,0],
+        "hints_used":[false,false,false,false]                
     },     
     "pc-activate-keycard-activated": {
         "image": "pc_activate_keycard_activated",
         "options": {
             "Close intranet": {
                 "active":true,
-                "go_to":"accessed-pc"
+                "go_to":"accessed-pc",
+                "rooms_affected": {
+                    "pc-excel": {
+                        "hint_data": {
+                            "hint_title":"No hints available.",
+                            "hints":["","","",""],
+                            "time_penalties":[0,0,0,0],
+                            "hints_used":[false,false,false,false]
+                        }                         
+                    }
+                }
             },
             "Close PC": {
                 "active":true,
-                "go_to":"aisle_4_west"
+                "go_to":"aisle_4_west",
+                "rooms_affected": {
+                    "pc-excel": {
+                        "hint_data": {
+                            "hint_title":"No hints available.",
+                            "hints":["","","",""],
+                            "time_penalties":[0,0,0,0],
+                            "hints_used":[false,false,false,false]
+                        }                         
+                    }
+                }                
             }
         }      
     },     
@@ -1473,7 +1688,13 @@
                 "active":true,
                 "go_to":"aisle_4_west"
             }
-        }
+        },
+        "hint_data": {
+            "hint_title":"Excel clues",
+            "hints":["There is a number missing","Try the intranet","Enter 437 in the cell with the bold border",""],
+            "time_penalties":[1,3,5,0],
+            "hints_used":[false,false,false,false]
+        }           
     },        
     "pedestal": {
         "image": "side_desk_dark",
@@ -1483,12 +1704,28 @@
                 "active": false,
                 "active_condition":false,
                 "selected_item": "torch",
-                "go_to": "pedestal_light"
+                "go_to": "pedestal_light",
+                "rooms_affected": {
+                    "pedestal": {
+                        "hint_data": {
+                            "hint_title":"No hints available",
+                            "hints":["","","",""],
+                            "time_penalties":[0,0,0,0],
+                            "hints_used":[false,false,false,false]
+                        }                               
+                    }
+                }                
             }
         },
         "directions": {
             "south": "aisle_2_east"
-        }
+        },
+        "hint_data": {
+            "hint_title":"Pedestal Clues",
+            "hints":["You're going to need a torch and another item.","They sell torches on Amazon...Can you find the battery, though?","The torch is in the puzzle box, the battery is in the clock.",""],
+            "time_penalties":[2,4,8,0],
+            "hints_used":[false,false,false,false]
+        }        
     },
     "pedestal_light": {
         "image": "side_desk_light_key",
@@ -1510,8 +1747,20 @@
                             }
                         }
                     }
-                }
-            }
+                },
+                "hint_data": {
+                    "hint_title":"No hints available.",
+                    "hints":["","","",""],
+                    "time_penalties":[0,0,0,0],
+                    "hints_used":[false,false,false,false]
+                }                  
+            },
+            "hint_data": {
+                "hint_title":"Keycard Clues",
+                "hints":["Can you find something to help you reach the keycard?","Have you got the measure of this game yet?","There is a ruler in the briefcase.",""],
+                "time_penalties":[1,3,5,0],
+                "hints_used":[false,false,false,false]
+            }                 
         },
         "directions": {
             "south": "aisle_2_east"
@@ -1599,7 +1848,13 @@
         },
         "directions": {
             "south":"back"
-        }        
+        },
+        "hint_data": {
+            "hint_title":"Mobile phone clues",
+            "hints":["This hint is rubbish!","Check the bin.","147882 - the numbers corresponding to the blank squares on the tic tac toe games.",""],
+            "time_penalties":[3,4,10,0],
+            "hints_used":[false,false,false,false]
+        }                             
     },
     "phone_unlocked": {
         "image": "phone_unlocked",

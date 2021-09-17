@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
-<body data="pc-intranet">
+<body data="corridor_2_north">
     <div class="clock d-flex justify-content-center align-items-center">
         <div class="timer hours-ten text-center"></div>
         <div class="timer hours-one text-center"></div>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="container-fluid">
-    <button type="button" class="btn btn-success reload d-flex"><i class="fas fa-sync-alt"></i></button>
+    <button type="button" class="btn btn-success reload d-none"><i class="fas fa-sync-alt"></i></button>
     <div class="row">
         <div class="col-8 offset-2">
             <h1 class="d-flex justify-content-center" style="user-select:none">ESCAPE THE NEWBURY OFFICE</h3>  
@@ -110,7 +110,8 @@
         <div id="north" class="col-8 col-xl-6 d-flex justify-content-center align-items-center move-button">
             <i class="fas fa-angle-up fa-5x"></i>
         </div>
-        <div class="col-1 move-button-corner  d-flex justify-content-center align-items-center">
+        <div class="col-1 move-button-corner  d-flex justify-content-center align-items-center active">
+            <i class="fa fa-question-circle fa-3x hint-options" aria-hidden="true"></i>
            <!--<span><i class="fas fa-caret-square-right fa-3x toggle-options"></i></span>-->
         </div>        
      </div>
@@ -421,6 +422,83 @@
                 </div>
             </div>
             </div>
+        </div>
+
+        <!--Hint modal-->
+        <div class="modal fade" id="hint-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title message-title">Help! I'm a lawyer, get me out of here!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body message">
+                    <h2 class="hint-title"></h2>
+                    <div class="row hint-card mt-3">
+                        <div class="col-12">
+                            <h5 class="mb-0 d-flex justify-content-between">
+                                <button class="btn btn-primary hint-viewer" data-toggle="collapse" href="#hint1" role="button" aria-expanded="false" aria-controls="hint1">Hint 1</button>
+  
+                              <span>Time penalty: <span class="time-penalty"></span></span>
+                            </h5>
+                        </div>                        
+                        <div class="col-12">
+                          <div class="collapse multi-collapse clue" id="hint1">
+                            <div class="card card-body hint-message">
+                            </div>
+                          </div>
+                        </div>
+                    </div>    
+                    <div class="row hint-card mt-3">
+                        <div class="col-12">
+                            <h5 class="mb-0 d-flex justify-content-between">
+                                <button class="btn btn-primary hint-viewer" data-toggle="collapse" href="#hint2" role="button" aria-expanded="false" aria-controls="hint2">Hint 2</button>
+  
+                              <span>Time penalty: <span class="time-penalty"></span></span>
+                            </h5>
+                        </div>                        
+                        <div class="col-12">
+                          <div class="collapse multi-collapse clue" id="hint2">
+                            <div class="card card-body hint-message">
+                            </div>
+                          </div>
+                        </div>
+                    </div>     
+                    <div class="row hint-card mt-3">
+                        <div class="col-12">
+                            <h5 class="mb-0 d-flex justify-content-between">
+                                <button class="btn btn-primary hint-viewer" data-toggle="collapse" href="#answer" role="button" aria-expanded="false" aria-controls="answer">Answer</button>
+  
+                              <span>Time penalty: <span class="time-penalty"></span></span>
+                            </h5>
+                        </div>                        
+                        <div class="col-12">
+                          <div class="collapse multi-collapse clue" id="answer">
+                            <div class="card card-body hint-message">
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
+                    <div class="row hint-card mt-3">
+                        <div class="col-12">
+                            <h5 class="mb-0 d-flex justify-content-between">
+                                <button class="btn btn-primary hint-viewer" data-toggle="collapse" href="#find_item" role="button" aria-expanded="false" aria-controls="find_item">Find Item</button>
+  
+                              <span>Time penalty: <span class="time-penalty"></span></span>
+                            </h5>
+                        </div>                        
+                        <div class="col-12">
+                          <div class="collapse multi-collapse clue" id="find_item">
+                            <div class="card card-body hint-message">
+                            </div>
+                          </div>
+                        </div>
+                    </div>                                                               
+                </div>
+            </div>
+        </div>
         </div>
 
         <!--item modal -->

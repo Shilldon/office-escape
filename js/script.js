@@ -2,6 +2,7 @@ var roomData;
 var itemData;
 var inventory;
 var escapeTimer;
+var start;
 
 $(document).keydown(function(e) {
     console.log(e.which) //up 38 right 39 down 40 
@@ -107,7 +108,7 @@ $(document).ready(function() {
         moveToTarget(startingRoom);
     }
 
-    var start = localStorage.getItem("timer");
+    start = localStorage.getItem("timer");
     if(start == null) {
         start = new Date;
         localStorage.setItem("timer",start.toString());
@@ -360,6 +361,16 @@ $(".close-magnify").on("click", function() {
 
 })
 
+$(".hint-options").on("click", function() {
+    var currentRoom = $("body").attr("data");
+    activateHints(currentRoom);
+    showHintModal();
+})
+
+$(".hint-viewer").on("click", function() {
+    showHint($(this));
+})
+
 $(".close-magnify-item").on("click", function() {
     hideMagnifier();
 })
@@ -495,6 +506,23 @@ $(".briefcase").click(function(e){
         tryLock(lock, combination);
     }      
 }); 
+
+function showHintModal() {
+    $("#hint-modal").modal('show'); 
+}
+
+function showHint(hintButton) {
+    start = start - 60000 * parseInt($(hintButton).attr("data-time-penalty"));
+    var index = $(".hint-viewer").index(hintButton);
+    var currentRoom = $("body").attr("data");
+
+    $(".hint-viewer").eq(index).attr("data-time-penalty",0);    
+    
+    roomData[currentRoom].hint_data.hints_used[index] = true;
+    localStorage.setItem("roomData",JSON.stringify(roomData));      
+    activateHints(currentRoom);             
+
+}
 
 function tryLock(lock,combination) {
     var currentRoom = $("body").attr("data");
@@ -682,6 +710,8 @@ function updateMap(targetRoom) {
 }
 
 function showRoom(targetRoomData) {
+    $(".hint-card").hide();
+    $(".hint-options").hide();
     roomImage = targetRoomData.image;
     if(targetRoomData.hasOwnProperty("image_suffix")) {
         $.each(targetRoomData.image_suffix.images,function(index, image) {
@@ -704,6 +734,10 @@ function showRoom(targetRoomData) {
     }
     else {
         roomDescription="";
+    }
+
+    if(targetRoomData.hasOwnProperty("hint_data")) {        
+        $(".hint-options").show();
     }
 
     if(targetRoomData.hasOwnProperty("magnify")) {
@@ -927,7 +961,12 @@ function implementOption(effects, caller) {
                         delete roomData[room].directions[direction];    
                     }
                 })
-            }            
+            }  
+            if(!$.isEmptyObject(value.hint_data)) {
+                $.each(value.hint_data, function(hint,setting) {
+                    roomData[room].hint_data[hint] = setting;
+                })                
+            }                    
         })
         localStorage.setItem("roomData",JSON.stringify(roomData));                   
     }
@@ -1214,3 +1253,53 @@ function updateDescription(room,value) {
         }, 1000);        
     }
 }
+
+function activateHints(currentRoom) {
+    var hintArray = roomData[currentRoom].hint_data.hints;
+    var timePenaltyArray = roomData[currentRoom].hint_data.time_penalties;
+    var hintTitle = roomData[currentRoom].hint_data.hint_title;
+    var hintsUsedArray = roomData[currentRoom].hint_data.hints_used;
+    var hintMessages = $(".hint-message");
+    var timePenalties = $(".time-penalty");
+    $(".hint-card").hide();
+    $(".hint-title").text(hintTitle);
+
+    $.each(hintArray, function(key,hint) {
+        if(hint!="") {
+            $(".hint-card").eq(key).show();
+            if(hintsUsedArray[key] == true) {
+                $(".hint-viewer").eq(key).addClass('btn-disabled');
+                $(".hint-viewer").eq(key).prop('disabled', true);
+                $(".hint-viewer").eq(key).attr("data-time-penalty",0);
+                $(".time-penalty").eq(key).parent().hide();
+    
+                $(".clue").eq(key).addClass("show");
+            }
+            else if((key == 0) || (key == 3) || ((key == 1 || key ==2) && hintsUsedArray[key-1] == true)) {
+                $(".hint-viewer").eq(key).removeClass('btn-disabled');
+                $(".hint-viewer").eq(key).prop('disabled', false);
+                $(".clue").eq(key).removeClass("show");
+                if(timePenaltyArray[key]>1) {
+                    $(timePenalties).eq(key).text(timePenaltyArray[key]+" minutes")
+                }
+                else {
+                    $(timePenalties).eq(key).text(timePenaltyArray[key]+" minute")
+                }
+                $(".time-penalty").eq(key).parent().show();
+                $(".hint-viewer").eq(key).attr("data-time-penalty",timePenaltyArray[key]);        
+            }
+            else {
+                $(".hint-viewer").eq(key).addClass('btn-disabled');
+                $(".hint-viewer").eq(key).prop('disabled', true);                
+            }
+            $(hintMessages).eq(key).text(hint);
+            if(timePenaltyArray[key]>1) {
+                $(timePenalties).eq(key).text(timePenaltyArray[key]+" minutes")
+            }
+            else {
+                $(timePenalties).eq(key).text(timePenaltyArray[key]+" minute")
+            }
+            $(".hint-viewer").eq(key).attr("data-time-penalty",timePenaltyArray[key]);
+        }
+    })      
+}    
