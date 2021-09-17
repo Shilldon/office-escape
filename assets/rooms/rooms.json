@@ -84,12 +84,6 @@
             "east": "corridor_2_east",
             "south": "corridor_2_south",
             "west": "corridor_2_west"
-        },
-        "hint_data": {
-            "hint_title":"Printer Clues",
-            "hints":["Look at the computer","Run around in circles","","Top left of the screen"],
-            "time_penalties":[1,2,0,4],
-            "hints_used":[false,false,false,false]
         }
     },
     "corridor_2_east": {
