@@ -7,7 +7,13 @@
             "east": "corridor_1_east",
             "south": "corridor_1_south",
             "west": "corridor_1_west"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }           
     },    
     "corridor_1_east": {
         "image": "corridor_1_east",
@@ -21,7 +27,13 @@
             "east": "corridor_1_south",
             "south": "corridor_1_west",
             "west": "corridor_1_north"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },       
     "corridor_1_south": {
         "image": "corridor_1_south",
@@ -58,7 +70,13 @@
             "east": "corridor_1_west",
             "south": "corridor_1_north",
             "west": "corridor_1_east"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },  
     "corridor_1_west": {
         "image": "corridor_1_west",
@@ -74,7 +92,13 @@
             "south": "corridor_1_east",
             "west": "corridor_1_south"
         },
-        "magnify":true
+        "magnify":true,
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },           
     "corridor_2_north": {
         "image": "corridor_2_north",
@@ -84,7 +108,13 @@
             "east": "corridor_2_east",
             "south": "corridor_2_south",
             "west": "corridor_2_west"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },
     "corridor_2_east": {
         "image": "corridor_2_east",
@@ -104,7 +134,13 @@
             "east": "corridor_2_south",
             "south": "corridor_2_west",
             "west": "corridor_2_north"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },    
     "corridor_2_south": {
         "image": "corridor_2_south",
@@ -113,7 +149,13 @@
             "east": "corridor_2_west",
             "south": "corridor_2_north",
             "west": "corridor_2_east"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },      
     "corridor_2_west": {
         "image": "corridor_2_west",           
@@ -123,7 +165,13 @@
             "east": "corridor_2_north",
             "south": "corridor_2_east",
             "west": "corridor_2_south"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },   
     "corridor_3_north": {
         "image": "corridor_3_north",
@@ -137,7 +185,13 @@
             "east": "corridor_3_east",
             "south": "corridor_3_south",
             "west": "corridor_3_west"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },        
     "corridor_3_east": {
         "image": "corridor_3_east",
@@ -147,7 +201,13 @@
             "east": "corridor_3_south",
             "south": "corridor_3_west",
             "west": "corridor_3_north"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },     
     "corridor_3_south": {
         "image": "corridor_3_south",
@@ -166,7 +226,13 @@
                 "active":true,
                 "go_to":"seating_plan"
             }            
-        }         
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }           
     },     
     "corridor_3_west": {
         "image": "corridor_3_west",
@@ -182,7 +248,13 @@
                 "active":true,
                 "go_to": "stationery_cupboard"
             }
-        }        
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }          
     },   
     "corridor_4_north": {
         "image": "corridor_4_north",
@@ -192,7 +264,13 @@
             "east": "corridor_4_east",
             "south": "corridor_4_south",
             "west": "corridor_4_west"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },        
     "corridor_4_east": {
         "image": "corridor_4_east",
@@ -202,7 +280,13 @@
             "east": "corridor_4_south",
             "south": "corridor_4_west",
             "west": "corridor_4_north"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },     
     "corridor_4_south": {
         "image": "corridor_4_south",
@@ -211,7 +295,13 @@
             "east": "corridor_4_west",
             "south": "corridor_4_north",
             "west": "corridor_4_east"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },     
     "corridor_4_west": {
         "image": "corridor_4_west",
@@ -231,7 +321,13 @@
                 "active":true,
                 "go_to":"seating_plan"
             }            
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },    
     "corridor_5_north": {
         "image": "corridor_5_north",
@@ -241,7 +337,13 @@
             "east": "corridor_5_east",
             "south": "corridor_5_south",
             "west": "corridor_5_west"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },      
     "corridor_5_east": {
         "image": "corridor_5_east",
@@ -326,7 +428,13 @@
             "east": "corridor_5_west",
             "south": "corridor_5_north",
             "west": "corridor_5_east"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },     
     "corridor_5_west": {
         "image": "corridor_5_west",
@@ -340,7 +448,13 @@
             "south": "corridor_5_east",
             "west": "corridor_5_south",
             "north": "corridor_4_west"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },       
     "aisle_1_north": {
         "image":"aisle_1_north",
@@ -354,7 +468,13 @@
                 "active":true,
                 "go_to":"seating_plan"
             }
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },    
     "aisle_1_east": {
         "image":"aisle_1_east",
@@ -396,9 +516,9 @@
         },
         "hint_data": {
             "hint_title":"Drawer Clues",
-            "hints":["Try on top of the cupboards.","The keys is down the other end of the office.","They key is on top of the cupboard next to the printer at the other end of the office",""],
-            "time_penalties":[1,3,5],
-            "hints_used":[false,false,false]
+            "hints":["Try on top of the cupboards.","The keys is down the other end of the office.","They key is on top of the cupboard next to the printer at the other end of the office","No items here."],
+            "time_penalties":[1,3,5,5],
+            "hints_used":[false,false,false,false]
         }         
     },        
     "aisle_1_south": {
@@ -407,7 +527,13 @@
             "south":"aisle_1_north",
             "north":"corridor_1_south",
             "west":"aisle_1_east"            
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },       
     "aisle_2_north": {
         "image":"aisle_2_north",
@@ -426,7 +552,13 @@
                 "active":true,
                 "go_to":"seating_plan"
             }
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },
     "aisle_2_east": {
         "image":"aisle_2_east",
@@ -451,7 +583,13 @@
             ],            
             "go_to":"battery_bucket"
         },
-        "magnify":true
+        "magnify":true,
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },      
     "aisle_2_south": {
         "image":"aisle_2_south",
@@ -461,7 +599,13 @@
             "south":"aisle_2_north",
             "north":"corridor_2_south",
             "west":"aisle_2_east"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },     
     "aisle_2_west": {
         "image":"aisle_2_west",
@@ -495,9 +639,9 @@
             }
         },
         "hint_data": {
-            "hint_title":"Desks 3 & 4 Clues",
+            "hint_title":"Locate item",
             "hints":["","","","Desk calendar on the left of desk 4."],
-            "time_penalties":[0,0,0,3],
+            "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]
         },          
         "magnify":true
@@ -562,9 +706,9 @@
             }
         },
         "hint_data": {
-            "hint_title":"Target board",
+            "hint_title":"Locate item",
             "hints":["","","","The post-it note on the target board."],
-            "time_penalties":[0,0,0,2],
+            "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]
         }  
     },
@@ -602,7 +746,7 @@
             }
         },
         "hint_data": {
-            "hint_title":"Desks 9 & 10",
+            "hint_title":"Locate item",
             "hints":["","","","The pencil on desk 10 below the monitor."],
             "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]
@@ -616,7 +760,13 @@
             "west": "aisle_3_east",
             "east":"aisle_3_west",
             "north":"corridor_3_south"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },    
     "aisle_3_west": {
         "image":"aisle_3_west",
@@ -655,7 +805,7 @@
             }
         },
         "hint_data": {
-            "hint_title":"Desks 7 & 8",
+            "hint_title":"Locate item",
             "hints":["","","","The certification stamp. Middle left of desk 8."],
             "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]
@@ -674,7 +824,13 @@
                 "active":true,
                 "go_to": "bins"
             }
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },    
     "aisle_4_east": {
         "image":"aisle_4_east",
@@ -709,9 +865,9 @@
             }
         },
         "hint_data": {
-            "hint_title":"Desk 13 & 14 Clues",
+            "hint_title":"Locate item",
             "hints":["","","","Paper on the right of desk 14."],
-            "time_penalties":[0,0,0,2],
+            "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]
         },           
         "magnify":true        
@@ -724,7 +880,13 @@
             "west": "aisle_4_east",
             "east":"aisle_4_west",
             "north":"corridor_4_south"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },        
     "aisle_4_west": {
         "image":"computer",
@@ -758,9 +920,9 @@
             }
         },        
         "hint_data": {
-            "hint_title":"Desk 12 Clues",
+            "hint_title":"Locate item",
             "hints":["","","","Business card on left of the desk."],
-            "time_penalties":[0,0,0,3],
+            "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]
         },         
         "options": {
@@ -784,7 +946,13 @@
                 "active":true,
                 "go_to":"seating_plan"
             }            
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },    
     "aisle_5_east": {
         "image":"aisle_5_east",
@@ -799,7 +967,13 @@
                 "active":true,
                 "go_to": "briefcase"
             }
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },   
     "aisle_5_south": {
         "image":"aisle_5_south",
@@ -809,7 +983,13 @@
             "west": "aisle_5_east",
             "east":"aisle_5_west",
             "north":"corridor_5_south"
-        }
+        },
+        "hint_data": {      
+            "hint_title":"Locate item",
+            "hints":["","","","No items here."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]                                         
+        }  
     },        
     "aisle_5_west": {
         "image":"aisle_5_west",
@@ -845,9 +1025,9 @@
         },
         "magnify":true,
         "hint_data": {      
-            "hint_title":"Desks 15 & 16",
+            "hint_title":"Locate item",
             "hints":["","","","Mobile phone in the middle of the desk."],
-            "time_penalties":[0,0,0,2],
+            "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]                                         
         }        
     },   
@@ -951,14 +1131,20 @@
                     "image":"cupboard_open",
                     "click_option": {
                         "active":false
-                    }
+                    },
+                    "hint_data": {      
+                        "hint_title":"Cupboard",
+                        "hints":["","","","No hints available."],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]                                         
+                    } 
                 }
             }                                   
         },
         "hint_data": {      
             "hint_title":"Cupboard",
             "hints":["","","","Stepstool in the middle of the cupboard."],
-            "time_penalties":[0,0,0,1],
+            "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]                                         
         },          
         "directions": {
@@ -1098,8 +1284,8 @@
         },
         "hint_data": {
             "hint_title":"Stationery cupboard",
-            "hints":["There is a screwdriver somewhere in the office.","Try looking on the printer.","You need the screwdriver from the printer and the screwdriver bit which is hidden somewhere else. The mobile phone can help you.",""],
-            "time_penalties":[1,3,7,0],
+            "hints":["Try looking on the printer.","The mobile phone will help.","You need the screwdriver from the printer and the screwdriver bit which is hidden somewhere else. The mobile phone gallery can help you.",""],
+            "time_penalties":[2,4,7,0],
             "hints_used":[false,false,false,false]
         }  
     },  
@@ -1343,9 +1529,9 @@
         },
         "magnify":true,
         "hint_data": {
-            "hint_title":"Printer Clues",
+            "hint_title":"Locate item",
             "hints":["","","","Screwdriver on the left of the printer."],
-            "time_penalties":[0,0,0,2],
+            "time_penalties":[0,0,0,5],
             "hints_used":[false,false,false,false]
         }      
     },
@@ -1379,7 +1565,7 @@
         "hint_data": {
             "hint_title":"Printer Log In Clues",
             "hints":["Where might the model number be? Who is coming to fix the printer? Search for the User ID. You need make a 'note' of the password.","Model number - check the printer. User name/ID - the calendar and intranet might help. Password - try the desk drawer.","Model - 61048 (it's on the front of the printer). User name - Dave Bowman (Bowman from the calendar, then search the intranet). User ID - 2001 (from the intranet search). Password - 594A21 (written down in the notebook).",""],
-            "time_penalties":[5,10,15,2],
+            "time_penalties":[5,10,15,0],
             "hints_used":[false,false,false,false]
         }                  
     },
@@ -1460,7 +1646,7 @@
         "hint_data": {
             "hint_title":"Computer Clues",
             "hints":["The mobile phone can help you with the password.","Who's SRA number is it?","User initials - GM (GM has reserved the desk that the certification stamp is on). Password - 207819 (SRA number from GM's certification stamp.","Paper on the right of desk 14."],
-            "time_penalties":[2,4,15,2],
+            "time_penalties":[2,4,15,0],
             "hints_used":[false,false,false,false]
         }         
     },
@@ -1940,11 +2126,24 @@
                     "image":"battery_bucket_no_bit",
                     "click_option": {
                         "active":false
-                    }
+                    },
+                    "hint_data": {
+                        "hint_title":"Battery bucket",
+                        "hints":["","","","No hints available"],
+                        "time_penalties":[0,0,0,0],
+                        "hints_used":[false,false,false,false]
+                    }  
                 }
             }
         },
-        "magnify":true      
+        "magnify":true,
+        "hint_data": {
+            "hint_title":"Battery bucket",
+            "hints":["","","","Screwdriver bit - middle of the bucket below 3 red batteries."],
+            "time_penalties":[0,0,0,5],
+            "hints_used":[false,false,false,false]
+        }     
+
     },
     "end":{
         "name":"end",
