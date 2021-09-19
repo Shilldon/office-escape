@@ -554,7 +554,7 @@
         </div>
   
         <!--magnified item image modal-->
-        <div class="modal fullscreen-xxl" tabindex="-1" role="dialog" id="magnified-item-modal">
+        <div class="modal fullscreen-xxl full-screen-modal" tabindex="-1" role="dialog" id="magnified-item-modal">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -572,6 +572,29 @@
               </div>
             </div>
         </div>
+
+       <!--starting instructions modal-->
+        <div class="modal fullscreen-xxl full-screen-modal" data-backdrop="static" tabindex="-1" role="dialog" data-instruction = "1" id="starting-instructions-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="instructions-title">Instructions</h2>
+                    </div>
+                    <div class="modal-body d-flex justify-content-center">
+                    <img class="img-fluid" id="instructions-image" data-image="1" src="">
+                    </div>
+                    <div class="modal-body message">
+                        <h3 class="instruction-message">Welcome to 'Escape the Newbury Office'. Before you begin, here are some instructions. Click 'next'.</h3>
+                    </div>                
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary instructions-back" >Back</button>
+                        <button type="button" class="btn btn-secondary instructions-next" >Next</button>
+                    <button type="button" class="btn btn-primary instructions-close" data-dismiss="modal">Start Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </body>
 <script src="./js/script.js"></script>
 <script src="./js/magnifier.js"></script>

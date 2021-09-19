@@ -470,15 +470,19 @@ h2 {
   background-color: white;
 }
 
-#magnified-item-modal {
+#instructions-image {
+  border: #1a3a7c 2px solid;
+}
+
+.full-screen-modal {
   width: 100vw !important;
 }
 
-#magnified-item-modal .modal-dialog {
+.full-screen-modal .modal-dialog {
   max-width: 90vw !important;
 }
 
-#magnified-item-modal .modal-content {
+.full-screen-modal .modal-content {
   width: 85vw;
 }
 

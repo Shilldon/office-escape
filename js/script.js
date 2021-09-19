@@ -3,6 +3,14 @@ var itemData;
 var inventory;
 var escapeTimer;
 var start;
+var instructions;
+
+$(window).on('load', function() {
+    $('#starting-instructions-modal').modal('show');
+    $(".instructions-back").hide();
+    $(".instructions-close").hide();
+    $("#instructions-image").hide();
+});
 
 $(document).keydown(function(e) {
     console.log(e.which) //up 38 right 39 down 40 
@@ -117,8 +125,24 @@ $(document).ready(function() {
         start = Date.parse(start);
     }
 
-    escapeTimer = setInterval(function() {
+    $.ajax({
+        type: "get",    
+        url: "assets/instructions/instructions.json",
+        success: function(data) {
+            instructions = data;                       
+        }, 
+        error: function (request, error) {
+            console.log(arguments);
+            alert(" Can't do because: " + error);
+        }
+    });
 
+
+})
+
+function startTimer() {
+    $("body").attr("started",1);
+    escapeTimer = setInterval(function() {
         var now = new Date - start;
         var hours = Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((now % (1000 * 60 * 60)) / (1000 * 60));
@@ -141,24 +165,45 @@ $(document).ready(function() {
         $('.seconds-one').text(seconds.toString()[1]);
 
     }, 1000);
+}
 
-})
-/*
-var box = $(".inventory-menu"), x;
-$(".inventory-move").hover(function() {
-    if ($(this).attr("data")=="right") {
-        x = ((box.width() / 2)) + box.scrollLeft();
-        box.animate({
-          scrollLeft: x,
-        })
-      } else {
-        x = ((box.width() / 2)) - box.scrollLeft();
-        box.animate({
-          scrollLeft: -x,
-        })
+$(".instructions-close").on("click",function() {
+    if($("body").attr("started")!=1) {
+        startTimer();        
     }
-});    
-*/
+})
+
+$(".instructions-next").on("click", function() {
+    var instructionNumber = $("#starting-instructions-modal").attr("data-instruction");
+    var newInstructionNumber = parseInt(instructionNumber)+1;
+    $("#instructions-image").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/instructions/"+newInstructionNumber+".jpg");    
+    $(".instruction-message").text(instructions[newInstructionNumber]);
+
+    if(newInstructionNumber == 24) {
+        $(".instructions-next").hide();
+    }
+    else if(newInstructionNumber==2) {
+        $(".instructions-close").show();
+        $("#instructions-image").show();
+        $(".instructions-back").show();
+    }
+    $("#starting-instructions-modal").attr("data-instruction",newInstructionNumber);
+})
+
+$(".instructions-back").on("click", function() {
+    var instructionNumber = $("#starting-instructions-modal").attr("data-instruction");
+    var newInstructionNumber = parseInt(instructionNumber)-1;
+    $("#instructions-image").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/instructions/"+newInstructionNumber+".jpg");    
+    $(".instruction-message").text(instructions[newInstructionNumber]);
+    if(newInstructionNumber == 1) {
+        $(".instructions-back").hide();
+        $("#instructions-image").hide();
+    }
+    else if(newInstructionNumber==23) {
+        $(".instructions-next").show();
+    }
+    $("#starting-instructions-modal").attr("data-instruction",newInstructionNumber);
+})
 
 var box = $(".inventory-menu"), x;
 $(".inventory-move").mouseover(function() {
@@ -802,8 +847,36 @@ function showRoom(targetRoomData) {
         $(".end-panel img").css("transform","scale(1,1)");  
 
         clearInterval(escapeTimer);
+
+        var now = new Date - start;
+        var hours = Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((now % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((now % (1000 * 60)) / 1000);        
+        var timeToEscape;
+        var hourText = "";
+        var minuteText= "";
+        var secondText = "";
+        if(hours>1) {
+            hourText = hours+" hours ";
+        }
+        else if(hours == 1) {
+            hourText = hours+" hour ";
+        }
+        if(minutes>1) {
+            minuteText = minutes+" minutes ";
+        }
+        else if(minutes == 1) {
+            minuteText = minutes+" minute ";
+        }
+        if(seconds>1) {
+            hourText = seconds+" seconds ";
+        }
+        else if(seconds == 1) {
+            secondText = seconds+" second ";
+        }
+        timeToEscape = hourText+minuteText+secondText;
         var i = 0;
-        var txt = '..you got out of the office. Now you need to get out of the building!    To be continued...'; /* The text */
+        var txt = '..you got out of the office in '+timeToEscape+'. Now you need to get out of the building!    To be continued...'; /* The text */
         var speed = 75; /* The speed/duration of the effect in milliseconds */
         setTimeout(
         function typeWriter() {
