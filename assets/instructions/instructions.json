@@ -22,5 +22,6 @@
         "21":"If you think there might be an item to pick up in a particular location, but you cannot find it, you can use the 'Find Item' hint. Beware, just because it is available it does not necessarily mean there is an item to pick up, and you will still incur the time penalty, if used.",
         "22":"You can use the magnifying glass to zoom in on the screen to help you look for clues or items.",
         "23":"You can move the magnifying glass around the screen by moving the mouse.",
-        "24":"To turn off the magnifying glass just click the cancel zoom icon."
+        "24":"To turn off the magnifying glass just click the cancel zoom icon.",
+        "25":"To view these instructions again at any time just click the info button."
 }

@@ -197,9 +197,18 @@ function updateTimer(seconds, minutes, hours) {
     $('.seconds-one').text(seconds.toString()[1]);    
 }
 
+$(".instructions-button").on("click", function() {
+    $("#starting-instructions-modal").attr("data-instruction",1);
+    $('#starting-instructions-modal').modal('show');
+    $(".instructions-back").hide();
+    $(".instructions-close").hide();
+    $("#instructions-image").hide();    
+})
+
 $(".instructions-close").on("click",function() {
     var started = localStorage.getItem("started");
     if(started!=1) {
+        $(".instructions-close").text("Close")
         startTimer();        
     }
 })
@@ -210,7 +219,7 @@ $(".instructions-next").on("click", function() {
     $("#instructions-image").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/instructions/"+newInstructionNumber+".jpg");    
     $(".instruction-message").text(instructions[newInstructionNumber]);
 
-    if(newInstructionNumber == 24) {
+    if(newInstructionNumber == 25) {
         $(".instructions-next").hide();
     }
     else if(newInstructionNumber==2) {
@@ -230,7 +239,7 @@ $(".instructions-back").on("click", function() {
         $(".instructions-back").hide();
         $("#instructions-image").hide();
     }
-    else if(newInstructionNumber==23) {
+    else if(newInstructionNumber==24) {
         $(".instructions-next").show();
     }
     $("#starting-instructions-modal").attr("data-instruction",newInstructionNumber);

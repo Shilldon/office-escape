@@ -27,7 +27,7 @@
     </div>
 
     <div class="container-fluid">
-    <button type="button" class="btn btn-success reload d-flex"><i class="fas fa-sync-alt"></i></button>
+    <button type="button" class="btn btn-success reload d-none"><i class="fas fa-sync-alt"></i></button>
     <div class="row">
         <div class="col-8 offset-2">
             <h1 class="d-flex justify-content-center" style="user-select:none">ESCAPE THE NEWBURY OFFICE</h3>  
@@ -392,7 +392,11 @@
     </div>
 
     <div class="row ml-3">
-        <div class="col-1 move-button-corner"></div>
+        <div class="col-1 move-button-corner d-flex justify-content-center align-items-center active">
+            <div class="instructions-button d-flex justify-content-center align-items-center ">
+                <i class="fas fa-info-circle fa-3x"></i>
+            </div>
+        </div>
         <div id="south" class="col-8 col-xl-6 d-flex justify-content-center align-items-center move-button">
             <i class="fas fa-angle-down fa-5x"></i>
         </div>
@@ -589,7 +593,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary instructions-back" >Back</button>
                         <button type="button" class="btn btn-secondary instructions-next" >Next</button>
-                    <button type="button" class="btn btn-primary instructions-close" data-dismiss="modal">Start Game</button>
+                        <button type="button" class="btn btn-primary instructions-close" data-dismiss="modal">Start Game</button>
                     </div>
                 </div>
             </div>
