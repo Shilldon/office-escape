@@ -198,7 +198,7 @@ function updateTimer(seconds, minutes, hours) {
 }
 
 $(".instructions-button").on("click", function() {
-    $("#starting-instructions-modal").attr("data-instruction",1);
+    $("#starting-instructions-modal").attr("data-instruction",0);
     $('#starting-instructions-modal').modal('show');
     $(".instructions-back").hide();
     $(".instructions-close").hide();
@@ -219,10 +219,10 @@ $(".instructions-next").on("click", function() {
     $("#instructions-image").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/instructions/"+newInstructionNumber+".jpg");    
     $(".instruction-message").text(instructions[newInstructionNumber]);
 
-    if(newInstructionNumber == 25) {
+    if(newInstructionNumber == 24) {
         $(".instructions-next").hide();
     }
-    else if(newInstructionNumber==2) {
+    else if(newInstructionNumber==1) {
         $(".instructions-close").show();
         $("#instructions-image").show();
         $(".instructions-back").show();
@@ -233,13 +233,15 @@ $(".instructions-next").on("click", function() {
 $(".instructions-back").on("click", function() {
     var instructionNumber = $("#starting-instructions-modal").attr("data-instruction");
     var newInstructionNumber = parseInt(instructionNumber)-1;
-    $("#instructions-image").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/instructions/"+newInstructionNumber+".jpg");    
+    if(newInstructionNumber>0) {
+        $("#instructions-image").attr("src","https://shilldon-escape.s3.eu-west-2.amazonaws.com/instructions/"+newInstructionNumber+".jpg");    
+    }
     $(".instruction-message").text(instructions[newInstructionNumber]);
-    if(newInstructionNumber == 1) {
+    if(newInstructionNumber == 0) {
         $(".instructions-back").hide();
         $("#instructions-image").hide();
     }
-    else if(newInstructionNumber==24) {
+    else if(newInstructionNumber==23) {
         $(".instructions-next").show();
     }
     $("#starting-instructions-modal").attr("data-instruction",newInstructionNumber);
