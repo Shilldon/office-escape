@@ -6,10 +6,16 @@ var start;
 var instructions;
 
 $(window).on('load', function() {
-    $('#starting-instructions-modal').modal('show');
-    $(".instructions-back").hide();
-    $(".instructions-close").hide();
-    $("#instructions-image").hide();
+    var started = localStorage.getItem("started");
+    if(started!=1) {
+        $('#starting-instructions-modal').modal('show');
+        $(".instructions-back").hide();
+        $(".instructions-close").hide();
+        $("#instructions-image").hide();
+    }
+    else {
+        startTimer();
+    }
 });
 
 $(document).keydown(function(e) {
@@ -116,15 +122,6 @@ $(document).ready(function() {
         moveToTarget(startingRoom);
     }
 
-    start = localStorage.getItem("timer");
-    if(start == null) {
-        start = new Date;
-        localStorage.setItem("timer",start.toString());
-    }
-    else {
-        start = Date.parse(start);
-    }
-
     $.ajax({
         type: "get",    
         url: "assets/instructions/instructions.json",
@@ -137,17 +134,29 @@ $(document).ready(function() {
         }
     });
 
+    start = localStorage.getItem("timer");
+    if(start != null) {
+        start = Date.parse(start);
+    }
 
-})
+});
 
 function startTimer() {
-    $("body").attr("started",1);
+    localStorage.setItem("started",1);
+    start = localStorage.getItem("timer");
+    if(start == null) {
+        start = new Date;
+        localStorage.setItem("timer",start.toString());
+    }
+    else {
+        start = Date.parse(start);
+    }
     escapeTimer = setInterval(function() {
         var now = new Date - start;
         var hours = Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((now % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((now % (1000 * 60)) / 1000);        
-        if(seconds<10) {
+        /*if(seconds<10) {
             seconds = "0"+seconds;
         }
 
@@ -157,18 +166,40 @@ function startTimer() {
         if(hours<10) {
             hours = "0"+hours;
         }
+        
         $('.hours-ten').text(hours.toString()[0]);
         $('.hours-one').text(hours.toString()[1]);
         $('.minutes-ten').text(minutes.toString()[0]);
         $('.minutes-one').text(minutes.toString()[1]);
         $('.seconds-ten').text(seconds.toString()[0]);
         $('.seconds-one').text(seconds.toString()[1]);
-
+*/
+        updateTimer(seconds,minutes,hours);
     }, 1000);
 }
 
+function updateTimer(seconds, minutes, hours) {
+    if(seconds<10) {
+        seconds = "0"+seconds;
+    }
+
+    if(minutes<10) {
+        minutes = "0"+minutes;
+    }
+    if(hours<10) {
+        hours = "0"+hours;
+    }
+    $('.hours-ten').text(hours.toString()[0]);
+    $('.hours-one').text(hours.toString()[1]);
+    $('.minutes-ten').text(minutes.toString()[0]);
+    $('.minutes-one').text(minutes.toString()[1]);
+    $('.seconds-ten').text(seconds.toString()[0]);
+    $('.seconds-one').text(seconds.toString()[1]);    
+}
+
 $(".instructions-close").on("click",function() {
-    if($("body").attr("started")!=1) {
+    var started = localStorage.getItem("started");
+    if(started!=1) {
         startTimer();        
     }
 })
@@ -875,6 +906,7 @@ function showRoom(targetRoomData) {
             secondText = seconds+" second ";
         }
         timeToEscape = hourText+minuteText+secondText;
+        updateTimer(seconds,minutes,hours);
         var i = 0;
         var txt = '..you got out of the office in '+timeToEscape+'. Now you need to get out of the building!    To be continued...'; /* The text */
         var speed = 75; /* The speed/duration of the effect in milliseconds */
