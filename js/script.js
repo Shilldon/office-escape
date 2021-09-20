@@ -199,6 +199,7 @@ function updateTimer(seconds, minutes, hours) {
 
 $(".instructions-button").on("click", function() {
     $("#starting-instructions-modal").attr("data-instruction",0);
+    $(".instructions-close").text("Close")
     $(".instruction-message").text(instructions[0]);
     $('#starting-instructions-modal').modal('show');
     $(".instructions-next").show();
