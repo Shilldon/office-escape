@@ -6,9 +6,16 @@ var start;
 var instructions;
 
 $(window).on('load', function() {
-
+    var started = localStorage.getItem("started");
+    if(started!=1) {
+        $('#starting-instructions-modal').modal('show');
+        $(".instructions-back").hide();
+        $(".instructions-close").hide();
+        $("#instructions-image").hide();
+    }
+    else {
         startTimer();
-
+    }
 });
 
 $(document).keydown(function(e) {
