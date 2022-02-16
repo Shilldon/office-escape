@@ -19,7 +19,7 @@ $(window).on('load', function() {
 });
 
 $(document).keydown(function(e) {
-    console.log(e.which) //up 38 right 39 down 40 
+    //console.log(e.which) //up 38 right 39 down 40 
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
         e.view.event.preventDefault();
     }  
@@ -31,7 +31,7 @@ $(document).keydown(function(e) {
         case 40: direction = "south"; break;
         case 37: direction = "west"; break;        
     }
-    console.log(direction)
+    //console.log(direction)
     if($("#"+direction).hasClass("active")) {
 
         hideMagnifier();
