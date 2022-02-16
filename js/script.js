@@ -897,6 +897,7 @@ function showRoom(targetRoomData) {
         var hours = Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((now % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((now % (1000 * 60)) / 1000);        
+        console.log("hours "+hours+" minutes "+minutes+" seconds "+seconds)
         var timeToEscape;
         var hourText = "";
         var minuteText= "";
