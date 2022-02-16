@@ -914,7 +914,7 @@ function showRoom(targetRoomData) {
             minuteText = minutes+" minute ";
         }
         if(seconds>1) {
-            hourText = seconds+" seconds ";
+            secondText = seconds+" seconds ";
         }
         else if(seconds == 1) {
             secondText = seconds+" second ";
